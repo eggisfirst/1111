@@ -1,0 +1,277 @@
+.drawList-pc{
+  min-width: 1367px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background: url(../images/topBg.png) no-repeat, #241b53;
+  background-size: 100% auto;
+  &>li{
+    height: 544px;
+    width: 410px;
+    background: #111835;
+    border-radius: 8px;
+    border: dashed 2px #6476b3;
+    margin: 0 5px 10px 5px;
+    box-shadow: 0px 0px 4px 1px #755cd3;
+    h5{
+      width: 250px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+      font-weight: 300;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -125px;
+      background: url(../images/lable.png) no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  // 左边框
+  li.left{
+    flex: 1;
+    div{
+      position: relative;
+      height: 272px;
+      color: #fff;
+      h2{
+        height: 272px;
+        text-align: center;
+        font-size: 78px;
+        color: #ec8919;
+        line-height: 272px;
+        span{
+          font-size: 22px;
+          color: #fff;
+        }
+      }
+    }
+    div:first-child{
+      box-sizing: border-box;
+      border-bottom: 1px solid #444974;
+      margin-bottom: -2px;
+    }
+  }
+
+  // 中间框
+  li.min{
+    flex: 2;
+    border: none;
+    background: none;
+    box-shadow: none;
+    .top{
+      position: relative;
+      height: 44px;
+      li{
+        position: absolute;
+        width: 38px;
+        height: 40px;
+        bottom: -20px;
+        background: url(../images/point1.png) no-repeat;
+        background-size: 100% 100%;
+        z-index: 1000;
+        span{
+          position: absolute;
+          color: #fff;
+          display: block;
+          width: 100px;
+          text-align: center;
+        }
+      }
+      li:nth-child(1){
+        left: 30px;
+      }
+      li:nth-child(2){
+        left: 230px;
+        span{
+          left: -30px;
+        }
+        span:first-child{
+          bottom: 45px;
+        }
+        span:last-child{
+          bottom: -20px;
+        }
+      }
+      li:nth-child(3){
+        right: 230px;
+      }
+      li:nth-child(4){
+        right: 30px;
+        span{
+          left: -30px;
+        }
+        span:first-child{
+          bottom: 45px;
+        }
+        span:last-child{
+          bottom: -20px;
+        }
+      }
+    }
+    .top::after{
+      display: block;
+      position: absolute;
+      width: 250px;
+      bottom: -2px;
+      content: '';
+      height: 2px;
+      z-index: 0;
+    }
+    .date1{
+      border-bottom: 2px solid #755cd3;
+      li:nth-child(3), li:nth-child(4){
+        background: url(../images/point2.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .date1::after{
+      width: 250px;
+      left: 0;
+      background-color: #eb891a;
+    }
+    .date2{
+      border-bottom: 2px solid #eb891a;
+      li:nth-child(4){
+        background: url(../images/point2.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .date2::after{
+      width: 250px;
+      right: 0;
+      background-color: #755cd3;
+    }
+    .bot{
+      height: 420px;
+      border-radius: 8px;
+      border: dashed 2px #6476b3;
+      margin-top: 74px;
+      background: #111835;
+      box-shadow: 0px 0px 4px 1px #755cd3;
+      h4{
+        flex: 1;
+        font-size: 36px;
+        color: #fff;
+        text-align: center;
+        line-height: 2em;
+      }
+      p{
+        background: #2d2b5c;
+        span{
+          color: #e2c4fe;
+        }
+      }
+      span{
+        flex: 1;
+        font-size: 20px;
+        color: #ada1da;
+        text-align: center;
+        line-height: 1.8em;
+      }
+      .awardsBox{
+        height: 314px;
+        overflow-x: hidden;
+      }
+      li, p{
+        display: flex;
+        span:nth-child(4){
+          flex: 1.6;
+        }
+      }
+      li:first-child{
+        margin-top: 314px;
+      }
+      li:last-child{
+        padding-bottom: 314px;
+      }
+      li:nth-of-type(2n+0) {
+        background: rgba(45, 43, 92, .5);
+      }
+    }
+  }
+
+  // 右边框
+  li.right{
+    flex: 1;
+    h4{
+      font-size: 36px;
+      color: #fff;
+      text-align: center;
+      line-height: 80px;
+      border-bottom: 2px solid #444974;
+    }
+    &>ul{
+      li{
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        height: 160px;
+        border-bottom: 2px solid #444974;
+        h5{
+          margin-top: -2px;
+        }
+        div{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          height: 160px;
+        }
+        strong{
+          display: block;
+          width: 90px;
+          height: 60px;
+        }
+        strong.m1{
+          background: url(../images/m1.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+        }
+        strong.m2{
+          background: url(../images/m2.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+        }
+        strong.m3{
+          background: url(../images/m3.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+        }
+        strong.m4{
+          background: url(../images/m4.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+        }
+        p{
+          span{
+            display: block;
+            font-size: 10px;
+            color: #a3a7c6;
+            line-height: 2em;
+            text-align: center;
+          }
+        }
+      }
+      li:first-child{
+        flex-direction: column;
+        height: 138px;
+        div{
+          width: 90%;
+          height: 40px;
+          background: url(../images/travel.png) no-repeat;
+          background-size: 100% 100%;
+          margin-bottom: 10px;
+        }
+      }
+      li:last-child{
+        border: none;
+      }
+    }
+  }
+}
