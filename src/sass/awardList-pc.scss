@@ -1,19 +1,20 @@
+
 .drawList-pc{
   min-width: 1320px;
   min-height: 680px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  background: url(../images/topBg.png) no-repeat, #241b53;
+  background: url(../images/topBg.jpg) no-repeat, #000;
   background-size: 100% auto;
   &>li{
     height: 544px;
     width: 410px;
-    background: #111835;
+    background: rgba(39, 74, 100, .4);
     border-radius: 8px;
-    border: dashed 2px #6476b3;
+    border: dashed 2px #58a9e3;
     margin: 0 5px 10px 5px;
-    box-shadow: 0px 0px 4px 1px #755cd3;
+    box-shadow: 0px 0px 4px 1px #58a9e3;
     h5{
       width: 250px;
       height: 46px;
@@ -28,6 +29,7 @@
       background-size: 100% 100%;
       text-align: center;
       color: #fff;
+      margin-top: -3px;
     }
   }
 
@@ -44,8 +46,8 @@
       h2{
         height: 100%;
         text-align: center;
-        font-size: 78px;
-        color: #ec8919;
+        font-size: 88px;
+        color: #58a9e3;
         line-height: 272px;
         span{
           font-size: 22px;
@@ -55,12 +57,13 @@
     }
     div:first-child{
       box-sizing: border-box;
-      border-bottom: 1px solid #444974;
+      border-bottom: 2px solid rgba(88, 169, 227, .5);
       margin-bottom: -2px;
+      margin-top: -2px;
     }
     .bot{
       h2{
-        font-size: 36px;
+        font-size: 88px;
       }
     }
   }
@@ -121,11 +124,11 @@
       width: 250px;
       bottom: -2px;
       content: '';
-      height: 2px;
+      height: 2.5px;
       z-index: 0;
     }
     .date1{
-      border-bottom: 2px solid #755cd3;
+      border-bottom: 2px solid #ade2f8;
       li:nth-child(2), li:nth-child(3), li:nth-child(4){
         background: url(../images/point2.png) no-repeat;
         background-size: 100% 100%;
@@ -134,10 +137,10 @@
     .date1::after{
       width: 50px;
       left: 0;
-      background-color: #eb891a;
+      background-color:  #badf6e;
     }
     .date2{
-      border-bottom: 2px solid #755cd3;
+      border-bottom: 2px solid #ade2f8;
       li:nth-child(3), li:nth-child(4){
         background: url(../images/point2.png) no-repeat;
         background-size: 100% 100%;
@@ -146,10 +149,10 @@
     .date2::after{
       width: 250px;
       left: 0;
-      background-color: #eb891a;
+      background-color:  #badf6e;
     }
     .date3{
-      border-bottom: 2px solid #eb891a;
+      border-bottom: 2px solid  #badf6e;
       li:nth-child(4){
         background: url(../images/point2.png) no-repeat;
         background-size: 100% 100%;
@@ -158,10 +161,10 @@
     .date3::after{
       width: 250px;
       right: 0;
-      background-color: #755cd3;
+      background-color: #ade2f8;
     }
     .date4{
-      border-bottom: 2px solid #eb891a;
+      border-bottom: 2px solid  #badf6e;
       li:nth-child(4){
         background: url(../images/point2.png) no-repeat;
         background-size: 100% 100%;
@@ -170,15 +173,15 @@
     .date4::after{
       width: 50px;
       right: 0;
-      background-color: #755cd3;
+      background-color: #ade2f8;
     }
     .bot{
       height: 400px;
       border-radius: 8px;
-      border: dashed 2px #6476b3;
+      border: dashed 2px #58a9e3;
       margin-top: 50px;
-      background: #111835;
-      box-shadow: 0px 0px 4px 1px #755cd3;
+      background: rgba(39, 74, 100, .4);
+      box-shadow: 0px 0px 4px 1px #58a9e3;
       h4{
         flex: 1;
         font-size: 32px;
@@ -187,9 +190,9 @@
         line-height: 2em;
       }
       p{
-        background: #2d2b5c;
+        background: #58a9e3;
         span{
-          color: #e2c4fe;
+          color: #fff;
         }
       }
       span{
@@ -216,7 +219,7 @@
         padding-bottom: 314px;
       }
       li:nth-of-type(2n+0) {
-        background: rgba(45, 43, 92, .5);
+        background: rgba(39, 74, 100, .3);
       }
     }
   }
@@ -232,77 +235,156 @@
       color: #fff;
       text-align: center;
       line-height: 2em;
-      border-bottom: 2px solid #444974;
+      border-bottom: 2px solid rgba(88, 169, 227, .5);
+    }
+    @-webkit-keyframes rowup {
+      0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, -85%, 0);
+        transform: translate3d(0, -85%, 0);
+      }
     }
     &>ul{
       height: 84%;
+      position: relative;
+      overflow: hidden;
+      // overflow-y: hidden;
+      .rowup{
+        -webkit-animation: 15s rowup linear infinite normal;
+        animation: 15s rowup linear infinite normal;
+        position: relative;
+      }
+   
+      //底部阴影
+      .bottom-show{
+        position: absolute;
+        width: 394px;
+        height: 40px;
+        background-image: linear-gradient(0deg, #101e28,transparent);
+        border-radius: 0px 0px 8px 8px;
+        bottom: 0; 
+      }
       li{
         position: relative;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         flex-direction: row;
-        height: 34.78%;
-        border-bottom: 2px solid #444974;
+        border-bottom: 2px solid rgba(88, 169, 227, .5);
+        box-sizing: border-box;
+        //虚线
+        .line1{
+          position: absolute;
+          height: 23px;
+          width: 2px;
+          background: rgba(88, 169, 227, .5);
+          bottom: 66px;
+          left: 194px;
+        }
+        .line2{
+          position: absolute;
+          height: 23px;
+          width: 2px;
+          background: rgba(88, 169, 227, .5);
+          bottom: 41px;
+          left: 194px;
+        }
+        .line3{
+          position: absolute;
+          height: 23px;
+          width: 2px;
+          background: rgba(88, 169, 227, .5);
+          bottom: 16px;
+          left: 194px;
+        }
         h5{
-          margin-top: -2px;
+          margin-top: -4px;
+          font-weight: bold;
         }
         div{
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
           align-items: center;
           flex-direction: column;
-          height: 100%;
-          width: 50%;
+          height: 90px;
+          width: 328px;
+          margin-top: 64px;
+          margin-bottom: 7px;
         }
         strong{
-          display: block;
-          width: 90px;
-          height: 60px;
+          display: block;   
         }
         strong.m1{
           background: url(../images/m1.png) no-repeat;
           background-size: 100% auto;
           background-position: center;
+          width: 95px;
+          height: 56px;
         }
         strong.m2{
           background: url(../images/m2.png) no-repeat;
           background-size: 100% auto;
           background-position: center;
+          width: 93px;
+          height: 58px;
         }
         strong.m3{
           background: url(../images/m3.png) no-repeat;
           background-size: 100% auto;
           background-position: center;
+          width: 91px;
+          height: 60px;
         }
         strong.m4{
           background: url(../images/m4.png) no-repeat;
           background-size: 100% auto;
           background-position: center;
+          width: 80px;
+          height: 61px;
+        }
+        strong.m5{
+          background: url(../images/m5.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+          width: 79px;
+          height: 37px;
+          margin-bottom: 17px
+        }
+        strong.m6{
+          background: url(../images/m6.png) no-repeat;
+          background-size: 100% auto;
+          background-position: center;
+          width: 113px;
+          height: 33px;
+          margin-bottom: 16px
         }
         p{
+          margin-top: 7px;
           span{
             display: block;
-            font-size: 10px;
-            color: #a3a7c6;
-            line-height: 1.6em;
+            font-size: 12px;
+            color: #9fc9e8;
+            line-height: 14px;
             text-align: center;
+            
           }
         }
       }
       li:first-child{
         flex-direction: column;
-        height: 30.4%;
+        height:120px;
         div{
           width: 90%;
           height: 40px;
           background: url(../images/travel.png) no-repeat;
           background-size: 100% 100%;
-          margin-bottom: 10px;
+          margin-top: 0px;
+          margin-bottom: 0px
+          
         }
-      }
-      li:last-child{
-        border: none;
       }
     }
   }

@@ -12,14 +12,14 @@ class AwardListPC extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
       awards: [],
-      totalAmount: null
+      totalAmount: '1898'
     }
     this.Variable = {
       boxHeight: this.state.height - (this.state.width * 0.26)
     }
     this.getAwards = () => {
       let _this = this
-      axios.get(`${Variable.path}getPrizes`, {
+      axios.get(`${Variable.path}`, {
         params: {
           date: '2018-09-09',
           // province: '辽宁',
@@ -133,6 +133,7 @@ class AwardListPC extends Component {
     return (
       <ul ref="drawList_pc" className="drawList-pc" style={styleComponent.draw}>
         <li className="left" style={styleComponent.boxHeight}>
+          
           <div className="top">
             <h2>{
               Variable.dateCount(new Date().getDate())
@@ -140,27 +141,26 @@ class AwardListPC extends Component {
             <h5>距下一轮抽奖还有</h5>
           </div>
           <div className="bot">
-            <h2>{Variable.priceSwitch(this.state.totalAmount)}<span>元</span></h2>
-            <h5>火爆销售额</h5>
-          </div>
+            <h2>{(this.state.totalAmount)}<span>人</span></h2>
+            <h5>参与人数</h5>
+          </div> 
         </li>
-
         <li className="min">
           <ul className="top date4">
             <li>
-              <span>8月19日</span>
+              <span>11月12日</span>
               <span>17:00</span>
             </li>
             <li>
-              <span>8月26日</span>
+              <span>11月19日</span>
               <span>17:00</span>
             </li>
             <li>
-              <span>9月02日</span>
+              <span>11月26日</span>
               <span>17:00</span>
             </li>
             <li>
-              <span>9月09日</span>
+              <span>12月03日</span>
               <span>17:00</span>
             </li>
           </ul>
@@ -185,47 +185,142 @@ class AwardListPC extends Component {
         <li className="right" style={styleComponent.boxHeight}>
           <h4>全国奖品池</h4>
           <ul>
+            <div className='rowup'>
+            <div>
             <li>
-              <h5>澳洲-新西兰旅游奖  30名</h5>
+              <h5>珠海澳网门票奖  25名</h5>
               <div></div>
-              <p><span>全包澳洲-新西兰旅游，出游者限18周岁及以上（不含孕妇）</span></p>
+              <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
             </li>
             <li>
-              <h5>床品奖  200名</h5>
+              <h5>育儿奖  244名</h5>
               <div>
                 <strong className="m1"></strong>
                 <p>
-                  <span>家纺芯逸桑蚕丝夏被</span>
-                  <span>型号DZZ1-016（100名）</span>
+                  <span>儿童功能书桌椅(4名)</span>  
                 </p>
               </div>
               <div>
               <strong className="m2"></strong>
                 <p>
-                  <span>凯奇床品四件套</span>
-                  <span>型号QCK2-015（100名）</span>
+                  <span>儿童可调硅胶枕(120名）</span>
+                  <span>幼儿舒睡硅胶枕(120名）</span>
                 </p>
               </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
             </li>
             <li>
-              <h5>助眠奖  800名</h5>
+              <h5>床品奖  700名</h5>
               <div>
                 <strong className="m3"></strong>
                 <p>
-                  <span>眼睛灵按摩眼罩</span>
-                  <span>型号GZZ1-009（200名）</span>
+                  <span>家纺芯逸桑蚕丝夏被</span>
+                  <span>型号DZZ1-016(100名）</span>
                 </p>
               </div>
               <div>
                 <strong className="m4"></strong>
                 <p>
-                  <span>情侣枕</span>
-                  <span>型号PZZ1-014（600名）</span>
+                  <span>伊芙卡罗毯(600名）</span>
                 </p>
               </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
             </li>
+            <li>
+              <h5>助眠奖  520名</h5>
+              <div>
+                <strong className="m5"></strong>
+                <p>
+                  <span>眼精灵按摩眼罩</span>
+                  <span>GZZ1-009(120名）</span>
+                </p>
+              </div>
+              <div>
+                <strong className="m6"></strong>
+                <p>
+                  <span>情侣枕</span>
+                  <span>PZZ1-014(400名）</span>
+                </p>
+              </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
+            </li>
+            </div>
+            <div>
+            <li>
+              <h5>珠海澳网门票奖  25名</h5>
+              <div></div>
+              <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
+            </li>
+            <li>
+              <h5>育儿奖  244名</h5>
+              <div>
+                <strong className="m1"></strong>
+                <p>
+                  <span>儿童功能书桌椅(4名)</span>  
+                </p>
+              </div>
+              <div>
+              <strong className="m2"></strong>
+                <p>
+                  <span>儿童可调硅胶枕(120名）</span>
+                  <span>幼儿舒睡硅胶枕(120名）</span>
+                </p>
+              </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
+            </li>
+            <li>
+              <h5>床品奖  700名</h5>
+              <div>
+                <strong className="m3"></strong>
+                <p>
+                  <span>家纺芯逸桑蚕丝夏被</span>
+                  <span>型号DZZ1-016(100名）</span>
+                </p>
+              </div>
+              <div>
+                <strong className="m4"></strong>
+                <p>
+                  <span>伊芙卡罗毯(600名）</span>
+                </p>
+              </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
+            </li>
+            <li>
+              <h5>助眠奖  520名</h5>
+              <div>
+                <strong className="m5"></strong>
+                <p>
+                  <span>眼精灵按摩眼罩</span>
+                  <span>GZZ1-009(120名）</span>
+                </p>
+              </div>
+              <div>
+                <strong className="m6"></strong>
+                <p>
+                  <span>情侣枕</span>
+                  <span>PZZ1-014(400名）</span>
+                </p>
+              </div>
+              <div className='line1'></div>
+              <div className='line2'></div>
+              <div className='line3'></div>
+            </li>
+            </div>
+            </div>
+            <div className='bottom-show'></div>
           </ul>
         </li>
+        
       </ul>
     )
   }
