@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Routes from './routes'
+// import {flexible_css} from './assets/js/flexible_css'
+// import {flexible} from './assets/js/flexible'
+// // flexible_css()
+// flexible()
 
 class App extends Component {
   constructor (props) {
@@ -9,7 +13,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
-
+    console.log('mangoguang', this)
   }
   render () {
     return (

@@ -9,28 +9,31 @@ class AwardListPC extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      width: window.innerWidth,
       height: window.innerHeight,
       awards: [],
-      awardTotal: null
+      totalAmount: null
+    }
+    this.Variable = {
+      boxHeight: this.state.height - (this.state.width * 0.26)
     }
     this.getAwards = () => {
       let _this = this
       axios.get(`${Variable.path}getPrizes`, {
         params: {
-          date: '2018-08-08'
-          // province: '广东',
-          // city: '汕头市'
+          date: '2018-09-09',
+          // province: '辽宁',
+          // city: '大连市'
         }
       })
       .then(function (res) {
         console.log(999888777, res)
         if (res.data) {
-          _this.setState({awardTotal: res.data.awardTotal})
+          _this.setState({totalAmount: res.data.totalAmount})
           if (res.data.data) {
             res = res.data.data
           }
         }
-        // tempArr = [{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},{name: 'zhangsan',phone: '1882***4356',grade: '床品奖',award: '家纺芯逸桑蚕丝夏被'},]
         _this.setState({awards: [...res.firstPrize, ...res.secondPrize1, ...res.secondPrize2, ...res.thirdPrize1, ...res.thirdPrize2]})
         // console.log('successsss', _this.setState);
       })
@@ -41,12 +44,13 @@ class AwardListPC extends Component {
   }
   componentWillMount() {
     this.getAwards()
+    console.log(2333333)
   }
   componentDidMount () {
     let awardsBox = document.getElementById('awardsBox')
     let awardList = document.getElementById('awardList')
-    console.log(99009900, awardsBox.scrollHeight)
     let scrollTop
+    this.setState({width: this.refs.drawList_pc.clientWidth})
     // window.scroll(0, 100)
     setInterval(function() {
       awardsBox.scrollBy(0,1)
@@ -60,13 +64,20 @@ class AwardListPC extends Component {
     const styleComponent = {
       draw: {
         height: `${this.state.height}px`
+      },
+      boxHeight: {
+        height: `${this.Variable.boxHeight}px`
       }
     }
     const awards = this.state.awards.map((item, i) => 
       // console.log(11112222, this.state.awards)
       <li key={i}>
-        <span>{item.username}</span>
-        <span>{item.phone}</span>
+        <span>{
+          item.username ? Variable.replaceName(item.username) : ''
+        }</span>
+        <span>{
+          item.username ? Variable.replacePhone(item.phone) : ''
+        }</span>
         <span>{
           (() => {
             let type
@@ -109,7 +120,7 @@ class AwardListPC extends Component {
                 type = '眼精灵按摩眼罩'
                 break;
               case 'thirdPrize2':
-                type = '助眠奖'
+                type = '情侣枕'
                 break;
             default:
               return ''
@@ -120,29 +131,37 @@ class AwardListPC extends Component {
       </li>
     )
     return (
-      <ul className="drawList-pc" style={styleComponent.draw}>
-        <li className="left">
+      <ul ref="drawList_pc" className="drawList-pc" style={styleComponent.draw}>
+        <li className="left" style={styleComponent.boxHeight}>
           <div className="top">
-            <h2>5<span>天</span></h2>
+            <h2>{
+              Variable.dateCount(new Date().getDate())
+            }<span>天</span></h2>
             <h5>距下一轮抽奖还有</h5>
           </div>
           <div className="bot">
-            <h2>{this.state.awardTotal}<span>人</span></h2>
-            <h5>参与人数</h5>
+            <h2>{Variable.priceSwitch(this.state.totalAmount)}<span>元</span></h2>
+            <h5>火爆销售额</h5>
           </div>
         </li>
 
         <li className="min">
-          <ul className="top date1">
-            <li></li>
+          <ul className="top date4">
             <li>
-            <span>8月26日</span>
-            <span>17:00</span>
+              <span>8月19日</span>
+              <span>17:00</span>
             </li>
-            <li></li>
             <li>
-            <span>9月09日</span>
-            <span>17:00</span>
+              <span>8月26日</span>
+              <span>17:00</span>
+            </li>
+            <li>
+              <span>9月02日</span>
+              <span>17:00</span>
+            </li>
+            <li>
+              <span>9月09日</span>
+              <span>17:00</span>
             </li>
           </ul>
           <div  className="bot">
@@ -156,14 +175,14 @@ class AwardListPC extends Component {
             <div className="awardsBox" id="awardsBox">
               {/* <marquee behavior="scroll" align="top" direction="up"> */}
                 <ul id="awardList">
-                    {awards}
+                  {awards}
                 </ul>
               {/* </marquee> */}
             </div>
           </div>
         </li>
 
-        <li className="right">
+        <li className="right" style={styleComponent.boxHeight}>
           <h4>全国奖品池</h4>
           <ul>
             <li>

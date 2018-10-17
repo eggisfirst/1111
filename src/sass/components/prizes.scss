@@ -1,0 +1,103 @@
+.prizes{
+  // height: 544px;
+  // width: 100%;
+  width: 96vw;
+  background: #111835;
+  border-radius: 8px;
+  border: dashed 1px #6476b3;
+  margin: 3vw 2vw 0px 2vw;
+  box-shadow: 0px 0px 4px 1px #755cd3;
+  h5{
+    width: 38vw;
+    height: 6.66vw;
+    font-size: 10px;
+    line-height: 6.66vw;
+    font-weight: 300;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -20vw;
+    background: url(../../images/lable.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    color: #fff;
+  }
+  h4{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 2em;
+    border-bottom: 1px solid #444974;
+  }
+  &>ul{
+    li{
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      height: 21.3vw;
+      border-bottom: 1px solid #444974;
+      padding-top: 6.66vw;
+      h5{
+        margin-top: -2px;
+      }
+      div{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        height: 21.3vw;
+      }
+      strong{
+        display: block;
+        width: 12vw;
+        height: 8vw;
+      }
+      strong.m1{
+        background: url(../../images/m1.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+      }
+      strong.m2{
+        background: url(../../images/m2.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+      }
+      strong.m3{
+        background: url(../../images/m3.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+      }
+      strong.m4{
+        background: url(../../images/m4.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+      }
+      p{
+        span{
+          display: block;
+          font-size: 10px;
+          color: #a3a7c6;
+          line-height: 2em;
+          text-align: center;
+        }
+      }
+    }
+    li:first-child{
+      flex-direction: column;
+      // height: 18.4vw;
+      div{
+        width: 69.6vw;
+        height: 8.4vw;
+        background: url(../../images/travel.png) no-repeat;
+        background-size: 100% 100%;
+        margin-bottom: 10px;
+      }
+    }
+    li:last-child{
+      border: none;
+      // padding-bottom: 1vw;
+    }
+  }
+}

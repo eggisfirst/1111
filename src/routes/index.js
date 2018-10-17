@@ -17,9 +17,13 @@ const MyLoadingComponent = ({isLoading, error}) => {
   }
 }
 
-const [AsyncIndex, AsyncAwardListPC] = [
+const [AsyncIndex, AsyncDraw, AsyncAwardListPC] = [
   Loadable({
     loader: () => import ('../pages/index'),
+    loading: MyLoadingComponent
+  }),
+  Loadable({
+    loader: () => import ('../pages/draw'),
     loading: MyLoadingComponent
   }),
   Loadable({
@@ -33,6 +37,7 @@ class Routes extends Component {
     return (
       <Switch>
         <Route path="/" exact component={AsyncIndex}/>
+        <Route path="/draw" exact component={AsyncDraw}/>
         <Route path="/awardListPC" exact component={AsyncAwardListPC}/>
       </Switch>
     )
