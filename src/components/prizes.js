@@ -48,8 +48,8 @@ class prizes extends Component {
             <div>
             <strong className="m2"></strong>
               <p>
-                <span>    儿童可调硅胶枕(120名）</span>
-                <span>    幼儿舒睡硅胶枕(120名）</span>
+                <span>儿童可调硅胶枕(120名）</span>
+                <span>幼儿舒睡硅胶枕(120名）</span>
               </p>
             </div>
             <div className='line1'></div>
