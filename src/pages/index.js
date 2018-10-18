@@ -23,7 +23,7 @@ class Index extends Component {
     this.state = {
       height: window.innerHeight,
       btnStatus: [true, false, false],
-      totalAmount: ''
+      totalAmount: "1869"
     }
     this.clickBtn1 = () => {
       this.setState({btnStatus: [true, false, false]})

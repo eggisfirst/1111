@@ -23,7 +23,7 @@ class awardList extends Component {
     // 获取抽奖客户列表
     this.getAwards = (date) => {
       let _this = this
-      axios.get(`${Variable.path}getPrizes`, {
+      axios.get(`${Variable.path}`, {
         params: {
           date: date
         }

@@ -33,43 +33,67 @@ class prizes extends Component {
         <h4>全国奖品池</h4>
         <ul>
           <li>
-            <h5>澳洲-新西兰旅游奖  30名</h5>
+            <h5>珠海澳网门票奖  25名</h5>
             <div></div>
-            <p><span>全包澳洲-新西兰旅游，出游者限18周岁及以上（不含孕妇）</span></p>
+            <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
           </li>
           <li>
-            <h5>床品奖  200名</h5>
+            <h5>育儿奖  244名</h5>
             <div>
               <strong className="m1"></strong>
               <p>
-                <span>家纺芯逸桑蚕丝夏被</span>
-                <span>型号DZZ1-016（100名）</span>
+                <span>儿童功能书桌椅</span>
               </p>
             </div>
             <div>
             <strong className="m2"></strong>
               <p>
-                <span>凯奇床品四件套</span>
-                <span>型号QCK2-015（100名）</span>
+                <span>    儿童可调硅胶枕(120名）</span>
+                <span>    幼儿舒睡硅胶枕(120名）</span>
               </p>
             </div>
+            <div className='line1'></div>
+            <div className='line2'></div>
+            <div className='line3'></div>
           </li>
           <li>
-            <h5>助眠奖  800名</h5>
+            <h5>床品奖 700名</h5>
             <div>
               <strong className="m3"></strong>
               <p>
-                <span>眼睛灵按摩眼罩</span>
-                <span>型号GZZ1-009（200名）</span>
+                <span>芯逸桑蚕丝夏被</span>
+                <span>型号DZZ1-016(100名）</span>
               </p>
             </div>
             <div>
               <strong className="m4"></strong>
               <p>
-                <span>情侣枕</span>
-                <span>型号PZZ1-014（600名）</span>
+                <span>伊芙卡罗毯(600名）</span> 
               </p>
             </div>
+            <div className='line1'></div>
+            <div className='line2'></div>
+            <div className='line3'></div>
+          </li>
+          <li>
+            <h5>助眠奖  520名</h5>
+            <div>
+              <strong className="m5"></strong>
+              <p>
+                <span>眼精灵按摩眼罩</span>
+                <span>GZZ1-009(120名）</span>
+              </p>
+            </div>
+            <div>
+              <strong className="m6"></strong>
+              <p>
+                <span>情侣枕</span> 
+                <span>PZZ1-014(400名）</span>
+              </p>
+            </div>
+            <div className='line1'></div>
+            <div className='line2'></div>
+            <div className='line3'></div>
           </li>
         </ul>
 			</div>

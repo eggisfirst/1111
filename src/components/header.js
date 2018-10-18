@@ -24,16 +24,16 @@ class Header extends Component {
     }
 
     this.dateChange1 = () => {
-      this.getAwards(this, '2018-08-19')
+      this.getAwards(this, '2018-11-12')
     }
     this.dateChange2 = () => {
-      this.getAwards(this, '2018-08-26')
+      this.getAwards(this, '2018-11-19')
     }
     this.dateChange3 = () => {
-      this.getAwards(this, '2018-09-02')
+      this.getAwards(this, '2018-11-26')
     }
     this.dateChange4 = () => {
-      this.getAwards(this, '2018-09-09')
+      this.getAwards(this, '2018-12-03')
     }
 
     this.getAwards = (_this, date) => {
@@ -78,26 +78,26 @@ class Header extends Component {
         </div>
         <ul className="timeLine">
           <li onClick={this.dateChange1}>
-            <p>8月19日</p>
+            <p>11月12日</p>
             <p>17:00</p>
           </li>
           <li onClick={this.dateChange2}>
-            <p>8月26日</p>
+            <p>11月19日</p>
             <p>17:00</p>
           </li>
           <li onClick={this.dateChange3}>
-            <p>9月02日</p>
+            <p>11月26日</p>
             <p>17:00</p>
           </li>
           <li onClick={this.dateChange4}>
-            <p>9月09日</p>
+            <p>12月03日</p>
             <p>17:00</p>
           </li>
           <div className="line"></div>
         </ul>
         <h5>距离下一轮抽奖还有：<span>{
           Variable.dateCount(new Date().getDate())
-        }</span>天    火爆销售额：<span>{Variable.priceSwitch(this.props.totalAmount)}</span>元</h5>
+        }</span>天    参与人数：<span>{(this.props.totalAmount)}</span>人</h5>
 			</div>
     )
   }

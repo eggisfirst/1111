@@ -7,7 +7,7 @@
       text-align: center;
       font-size: 12px;
       line-height: 2em;
-      color: #ada1da;
+      color: #9fc9e8;
     }
     span:nth-child(1){
       flex: 1;
@@ -23,10 +23,13 @@
     }
   }
   li:nth-of-type(2n + 1){
-    background: rgba(45, 43, 92, .5);
+    background: rgba(39, 74, 100, .5);
   }
   li:first-child{
-    background: #2d2b5c;
-    color: #e2c4fe;
+    background: #58a9e3;
+    span{
+      color: #fff;
+    }
+    
   }
 }

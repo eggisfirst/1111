@@ -8,14 +8,16 @@
   }
   h5{
     // height: 6.66vw;
-    background: #090b1a;
+    background: rgba(39, 74, 100, .5);
     margin: 2vw 0;
     color: #cdcdcd;
     font-size: 16px;
     line-height: 6.66vw;
     text-align: center;
+    font-weight: normal;
     span{
-      color: #eb891a;
+      color: #58a9e3;
+      font-weight: bold;
     }
   }
 }
@@ -31,7 +33,7 @@
     height: .4vw;
     width: 100%;
     margin-top: -.2vw;
-    background: #755cd3;
+    background: #ade2f8;
     z-index: -2;
   }
   li{
@@ -74,9 +76,9 @@
   top: 50%;
   left: 0;
   margin-top: -.2vw;
-  background: #eb891a;
+  background: #badf6e;
   z-index: -1;
 }
 .awards{
-  background: #755cd3;
+  background: #ade2f8;
 }

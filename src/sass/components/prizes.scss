@@ -2,15 +2,15 @@
   // height: 544px;
   // width: 100%;
   width: 96vw;
-  background: #111835;
-  border-radius: 8px;
-  border: dashed 1px #6476b3;
+  background: rgba(39, 74, 100, .5);
+  border-radius: 1.066vw;
+  border: dashed 2px #58a9e3;
   margin: 3vw 2vw 0px 2vw;
-  box-shadow: 0px 0px 4px 1px #755cd3;
+  box-shadow: 0px 0px 4px 1px #58a9e3;
   h5{
     width: 38vw;
     height: 6.66vw;
-    font-size: 10px;
+    font-size: 2.93vw;
     line-height: 6.66vw;
     font-weight: 300;
     position: absolute;
@@ -23,80 +23,135 @@
     color: #fff;
   }
   h4{
-    font-size: 16px;
+    font-size: 4.8vw;
     color: #fff;
     text-align: center;
     line-height: 2em;
-    border-bottom: 1px solid #444974;
+    border-bottom: 2px dashed rgba(88, 169, 227, .5);
   }
   &>ul{
     li{
       position: relative;
       display: flex;
-      justify-content: space-around;
+      justify-content:space-around;
       align-items: center;
       flex-direction: row;
-      height: 21.3vw;
-      border-bottom: 1px solid #444974;
+      height: 28vw;
+      border-bottom: 2px dashed rgba(88, 169, 227, .5);
       padding-top: 6.66vw;
+       //虚线
+       .line1{
+        position: absolute;
+        height: 4.56vw;
+        width: 2px;
+        background: rgba(88, 169, 227, .5);
+        bottom: 18.8vw;
+        left: 50vw;
+      }
+      .line2{
+        position: absolute;
+        height: 4.56vw;
+        width: 2px;
+        background: rgba(88, 169, 227, .5);
+        bottom: 13.46vw;
+        left: 50vw;
+      }
+      .line3{
+        position: absolute;
+        height: 4.56vw;
+        width: 2px;
+        background: rgba(88, 169, 227, .5);
+        bottom: 8.2vw;
+        left: 50vw;
+      }
       h5{
-        margin-top: -2px;
+        margin-top: -3.5px;
       }
       div{
         display: flex;
-        justify-content: flex-end;
+        justify-content:center;
         align-items: center;
         flex-direction: column;
         height: 21.3vw;
+        // border: 1px solid red;
+        
       }
       strong{
         display: block;
-        width: 12vw;
-        height: 8vw;
       }
       strong.m1{
         background: url(../../images/m1.png) no-repeat;
         background-size: 100% auto;
-        background-position: center;
+        background-position: center;   
+        width: 21.46vw;
+        height: 11.33vw;
       }
       strong.m2{
         background: url(../../images/m2.png) no-repeat;
         background-size: 100% auto;
         background-position: center;
+        width: 19vw;
+        height: 11.33vw;
+        margin-left: 8vw;
       }
       strong.m3{
         background: url(../../images/m3.png) no-repeat;
         background-size: 100% auto;
         background-position: center;
+        width: 20vw;
+        height: 12vw;
       }
       strong.m4{
         background: url(../../images/m4.png) no-repeat;
         background-size: 100% auto;
         background-position: center;
+        width: 16vw;
+        height: 12vw;
+      }
+      strong.m5{
+        background: url(../../images/m5.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        width: 13.6vw;
+        height: 6.4vw;
+        margin-top: -5vw
+      }
+      strong.m6{
+        background: url(../../images/m6.png) no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        width: 18.26vw;
+        height: 5.2vw;
+        margin-top: -5vw;
       }
       p{
+        margin-top: 1.4vw;
         span{
           display: block;
           font-size: 10px;
-          color: #a3a7c6;
-          line-height: 2em;
+          color: #9fc9e8;
+          line-height: 1.4em;
           text-align: center;
         }
       }
     }
     li:first-child{
       flex-direction: column;
-      // height: 18.4vw;
+      height: 21.3vw;
       div{
         width: 69.6vw;
         height: 8.4vw;
         background: url(../../images/travel.png) no-repeat;
         background-size: 100% 100%;
-        margin-bottom: 10px;
+        margin-top: 3.46vw;
+      }
+      p{
+        margin-bottom: 2vw;
       }
     }
     li:last-child{
       border: none;
+      
       // padding-bottom: 1vw;
     }
   }
