@@ -20,11 +20,19 @@ let init = (function() {
       return arr.concat('')
     },
     dateCount: (date) => {
-      if (date > 26 || date < 2) {
-        return (31 - date + 2)
-      } else {
-        return 9 - date
-      }
+      if (date > 25 || date < 3) {
+        console.log('1',date)
+        return (30 - date + 3)
+      } else if(date < 12){
+        console.log('2',date)
+        return (12 - date)
+      } else if(date > 11 && date < 19){
+        console.log('3')
+        return (19 - date)
+      } else if(date > 18 && date < 26){
+        console.log('4')
+        return (26 - date) 
+      } 
       // if (date < 02) {
       //   return 19 - date
       // } else {
@@ -37,7 +45,8 @@ let init = (function() {
           key = false
           axios.get(`${path}getPrizes`, {
             params: {
-              date: date
+              date: date,
+              type:'1111'
             }
           })
           .then(function (res) {
@@ -48,7 +57,7 @@ let init = (function() {
           })
           .catch(function (error) {
             key = true
-            console.log(error)
+            console.log('indexgetaward',error)
           })
         }
       })

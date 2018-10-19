@@ -17,24 +17,26 @@ class awardList extends Component {
 
     // 更新抽奖列表界面
     this.updateAwards = (res) => {
-      this.setState({awards: [...res.firstPrize, ...res.secondPrize1, ...res.secondPrize2, ...res.thirdPrize1, ...res.thirdPrize2]})      
+      this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2]})      
     }
 
     // 获取抽奖客户列表
-    this.getAwards = (date) => {
+    this.getAwards = () => {
       let _this = this
-      axios.get(`${Variable.path}`, {
+      axios.get(`${Variable.path}getPrizes`, {
         params: {
-          date: date
+          date: '2018-10-16',
+          type:'1111'
         }
       })
       .then(function (res) {
+        console.log('succesee',res.data.data.ticket,res.data.data.bedding2)
         if (res.data) {
           _this.props.changeTotalAmount(res.data.totalAmount)
           if (res.data.data) {
             res = res.data.data
-            _this.props.changeAwards([...res.firstPrize, ...res.secondPrize1, ...res.secondPrize2, ...res.thirdPrize1, ...res.thirdPrize2])    
-            
+            _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2])    
+            console.log(21122)
           }
         }
         // _this.updateAwards(res)
@@ -52,9 +54,9 @@ class awardList extends Component {
   }
 
 	componentDidMount () {
-    this.props.changeAwards([1, 2, 3])
+    this.props.changeAwards([1, 2, 3, 4, 5, 6, 7, 8])
     // this.props.changeTotalAmount(1000)
-    this.getAwards('2018-09-09')
+    this.getAwards('2018-10-16')
     console.log(1112222, this.props.status)
 	}
 
@@ -76,19 +78,28 @@ class awardList extends Component {
           (() => {
             let type
             switch(item.type){
-              case 'firstPrize':
+              case 'ticket':
                 type = '旅游奖'
                 break;
-              case 'secondPrize1':
+              case 'bedding1':
                 type = '床品奖'
                 break;
-              case 'secondPrize2':
+              case 'bedding2':
                 type = '床品奖'
                 break;
-              case 'thirdPrize1':
+              case 'bring_up1':
+                type = '育儿奖'
+                break;
+              case 'bring_up2':
+                type = '育儿奖'
+                break;
+              case 'bring_up3':
+                type = '育儿奖'
+                break;
+              case 'help_sleep1':
                 type = '助眠奖'
                 break;
-              case 'thirdPrize2':
+              case 'help_sleep2':
                 type = '助眠奖'
                 break;
             default:
@@ -101,19 +112,28 @@ class awardList extends Component {
           (() => {
             let type
             switch(item.type){
-              case 'firstPrize':
+              case 'ticket':
                 type = '澳洲新西兰之旅'
                 break;
-              case 'secondPrize1':
+              case 'bedding1':
                 type = '家纺芯逸桑蚕丝夏被'
                 break;
-              case 'secondPrize2':
+              case 'bedding2':
                 type = '凯奇床品四件套'
                 break;
-              case 'thirdPrize1':
+              case 'bring_up1':
                 type = '眼精灵按摩眼罩'
                 break;
-              case 'thirdPrize2':
+              case 'bring_up2':
+                type = '情侣枕'
+                break;
+              case 'bring_up3':
+                type = '情侣枕'
+                break;
+              case 'help_sleep1':
+                type = '情侣枕'
+                break;
+              case 'help_sleep2':
                 type = '情侣枕'
                 break;
             default:

@@ -16,7 +16,7 @@ class Header extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      numbers: [1, 2, 3, 4, 5]
+      numbers: [1, 2, 3, 4, 5, 6, 7, 8]
     }
     
     this.changeAwards = (arr) => {
@@ -24,7 +24,8 @@ class Header extends Component {
     }
 
     this.dateChange1 = () => {
-      this.getAwards(this, '2018-11-12')
+      // this.getAwards(this, '2018-11-12')
+      this.getLine()
     }
     this.dateChange2 = () => {
       this.getAwards(this, '2018-11-19')
@@ -36,13 +37,40 @@ class Header extends Component {
       this.getAwards(this, '2018-12-03')
     }
 
+    this.getLine = () => {
+      let date = new Date().getDate()
+      let myTimeLine = document.getElementsByClassName('timeLine')
+      let myPoint = document.getElementsByTagName('li')
+      if(date == 12 ){
+        console.log(date)
+        myTimeLine[0].classList.add('timeLineChangeWidth1')
+        myPoint[0].classList.add('changeBgPoint')
+      }else if(date == 19 ){
+        myTimeLine[0].classList.add('timeLineChangeWidth2')
+        myPoint[0].classList.add('changeBgPoint')
+        myPoint[1].classList.add('changeBgPoint')
+      }else if(date == 26){
+        myTimeLine[0].classList.add('timeLineChangeWidth3')
+        myPoint[0].classList.add('changeBgPoint')
+        myPoint[1].classList.add('changeBgPoint')
+        myPoint[2].classList.add('changeBgPoint')
+      }else if(date == 3){
+        myTimeLine[0].classList.add('timeLineChangeWidth4')
+        myPoint[0].classList.add('changeBgPoint')
+        myPoint[1].classList.add('changeBgPoint')
+        myPoint[2].classList.add('changeBgPoint')
+        myPoint[3].classList.add('changeBgPoint')
+      }
+    }
+
     this.getAwards = (_this, date) => {
       Variable.getAwards(date).then((res) => {
         if (res.data) {
+          console.log('click',res.data)
           if (res.data.data) {
             res = res.data.data
-            if (res.firstPrize) {
-              _this.props.changeAwards([...res.firstPrize, ...res.secondPrize1, ...res.secondPrize2, ...res.thirdPrize1, ...res.thirdPrize2])
+            if (res.ticket) {
+              _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2])
             }
           }
         }
@@ -65,10 +93,7 @@ class Header extends Component {
 		})
 		this.props.changeParentTit('子组件改变的', '兄弟组件改变的')()
   }
-
-	componentDidMount () {
-
-  }
+ 
 
   render () {
     return (

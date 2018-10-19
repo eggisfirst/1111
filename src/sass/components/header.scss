@@ -63,21 +63,37 @@
     top: 50%;
     left: 50%;
     margin: -2vw 0 0 -2vw;
-    background: url(../../images/point1.png) no-repeat;
+    background: url(../../images/point2.png) no-repeat;
     background-size: 100% 100%;
   }
+  .changeBgPoint::after{
+    background: url(../../images/point1.png) no-repeat;
+    background-size: 100% 100%;
+}
 }
 .timeLine::after{
   content: '';
   display: block;
   position: absolute;
   height: .4vw;
-  width: 87.5%;
+  width:0;
   top: 50%;
   left: 0;
   margin-top: -.2vw;
   background: #badf6e;
   z-index: -1;
+}
+.timeLineChangeWidth1::after{
+  width: 12.5%
+}
+.timeLineChangeWidth2::after{
+  width: 37.5%
+}
+.timeLineChangeWidth3::after{
+  width: 62.5%
+}
+.timeLineChangeWidth4::after{
+  width: 87.5%
 }
 .awards{
   background: #ade2f8;

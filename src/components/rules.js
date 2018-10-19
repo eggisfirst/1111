@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Variable from '../variable'
-import axios from 'axios'
+// import Variable from '../variable'
+// import axios from 'axios'
 import '../sass/components/rules.scss'
 // 引入抽奖规则数据
 import rulesData from '../assets/json/rules.js'
-import bannerImg from '../images/top.jpg'
+// import bannerImg from '../images/top.jpg'
 
 class rules extends Component {
   constructor (props) {
@@ -18,7 +18,7 @@ class rules extends Component {
 
 	componentDidMount () {
     // this.getAwards()
-    console.log(99887766554, rulesData)
+    // console.log(99887766554, rulesData)
 	}
 
   render () {

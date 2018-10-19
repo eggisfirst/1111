@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Variable from '../variable'
-import axios from 'axios'
+// import Variable from '../variable'
+// import axios from 'axios'
 import '../sass/components/prizes.scss'
 // 引入抽奖规则数据
 import rulesData from '../assets/json/rules.js'
-import bannerImg from '../images/top.jpg'
+// import bannerImg from '../images/top.jpg'
 
 class prizes extends Component {
   constructor (props) {

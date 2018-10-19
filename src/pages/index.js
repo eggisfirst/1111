@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Variable from '../variable'
+// import Variable from '../variable'
 import Mango from '../variable/nameSpace'
-import axios from 'axios'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// import axios from 'axios'
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 // 组件
 import Header from '../components/header'
@@ -23,7 +23,7 @@ class Index extends Component {
     this.state = {
       height: window.innerHeight,
       btnStatus: [true, false, false],
-      totalAmount: "1869"
+      totalAmount: ""
     }
     this.clickBtn1 = () => {
       this.setState({btnStatus: [true, false, false]})
