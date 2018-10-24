@@ -63,7 +63,7 @@
     }
     .bot{
       h2{
-        font-size: 42px;
+        font-size: 36px;
       }
     }
   }
@@ -75,6 +75,15 @@
     background: none;
     box-shadow: none;
     height: 500px;
+    .minBgText{
+      background: url(../images/minBgText.png) no-repeat;
+      background-size: 100% 100%;
+      width: 580px;
+      height: 154px;
+      position: absolute;
+      left: 44%;
+      top: 10%;
+    }
     .timeLine{
       display: flex;
       position: relative;
@@ -210,7 +219,17 @@
     flex: 1;
     max-height: 600px;
     min-height: 440px;
-    height: 440px;
+    height: 260px;
+    position: relative;
+    .rightBgText{
+      background: url(../images/rightBgText1.png) no-repeat;
+      background-size: 100% 100%;
+      width: 450px;
+      height: 14px;
+      position: absolute;
+      top: -26px;
+      left: -60px;
+    }
     h4{
       font-size: 32px;
       color: #fff;

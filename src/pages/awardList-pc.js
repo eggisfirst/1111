@@ -190,7 +190,6 @@ class AwardListPC extends Component {
     return (
       <ul ref="drawList_pc" className="drawList-pc" style={styleComponent.draw}>
         <li className="left" style={styleComponent.boxHeight}>
-          
           <div className="top">
             <h2>{
               Variable.dateCount(new Date().getDate())
@@ -203,6 +202,7 @@ class AwardListPC extends Component {
           </div> 
         </li>
         <li className="min">
+          <div className='minBgText'></div>
           <ul className="top timeLine">
             <li className='li-1'>
               <p>11月12日</p>
@@ -241,6 +241,7 @@ class AwardListPC extends Component {
         </li>
 
         <li className="right" style={styleComponent.boxHeight}>
+          <div className='rightBgText'></div>
           <h4>全国奖品池</h4>
           <ul>
             <div className='rowup'>
