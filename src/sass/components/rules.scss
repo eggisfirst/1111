@@ -1,8 +1,25 @@
 .rules{
   width: 100vw;
-  color:#9fc9e8;
   box-sizing: border-box;
   padding: 0 5.33vw;
-  font-size: 12px;
-  line-height: 2em;
+  .ruleDetails{
+    h1{
+      color: #9fc9e8;
+      font-size: 3.46vw;
+      margin-top: 1em;
+    }
+    li{
+      color: #fff;
+      font-size: 3.2vw;
+      line-height: 2em
+    }
+    p{
+      color: #999;
+      font-size: 3.2vw;
+      line-height: 2em;
+    }
+    span{
+      color: #58a9e3
+    }
+  }
 }

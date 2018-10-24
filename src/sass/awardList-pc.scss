@@ -8,7 +8,7 @@
   background: url(../images/topBg.jpg) no-repeat, #000;
   background-size: 100% auto;
   &>li{
-    height: 544px;
+    height: 524px;
     width: 410px;
     background: rgba(39, 74, 100, .4);
     border-radius: 8px;
@@ -74,14 +74,14 @@
     border: none;
     background: none;
     box-shadow: none;
-    height: 500px;
+    // height: 500px;
     .minBgText{
       background: url(../images/minBgText.png) no-repeat;
       background-size: 100% 100%;
       width: 580px;
       height: 154px;
       position: absolute;
-      left: 44%;
+      left: 41%;
       top: 10%;
     }
     .timeLine{
@@ -162,7 +162,7 @@
       width: 87.5%
     }
     .bot{
-      height: 400px;
+      height: 424px;
       border-radius: 8px;
       border: dashed 2px #58a9e3;
       margin-top: 50px;
@@ -186,20 +186,29 @@
       span{
         flex: 1;
         font-size: 20px;
-        color: #ada1da;
+        color: #9fc9e8;
         text-align: center;
         line-height: 1.8em;
-        margin-right: .4em;
+        // margin-right: .4em;
         overflow: hidden;
       }
       .awardsBox{
-        height: 300px;
+        height: 320px;
         overflow: hidden;
       }
       li, p{
         display: flex;
+        span:nth-child(1){
+          flex: 1;
+        }
+        span:nth-child(2){
+          flex: 1
+        }
+        span:nth-child(3){
+          flex: 1.2
+        }
         span:nth-child(4){
-          flex: 1.6;
+          flex: 1.2;
         }
       }
       li:first-child{
@@ -227,8 +236,8 @@
       width: 450px;
       height: 14px;
       position: absolute;
-      top: -26px;
-      left: -60px;
+      top: -38px;
+      left: -50px;
     }
     h4{
       font-size: 32px;
@@ -400,11 +409,11 @@
       }
     }
     li.min{
-      height: 430px;
+      height: 495px;
       .bot{
-        height: 330px;
+        height: 395px;
         .awardsBox{
-          height: 220px;
+          height: 293px;
         }
       }
     }
