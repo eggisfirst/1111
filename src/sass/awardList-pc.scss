@@ -8,7 +8,7 @@
   background: url(../images/topBg.jpg) no-repeat, #000;
   background-size: 100% auto;
   &>li{
-    height: 524px;
+    height: 468px;
     width: 410px;
     background: rgba(39, 74, 100, .4);
     border-radius: 8px;
@@ -74,7 +74,7 @@
     border: none;
     background: none;
     box-shadow: none;
-    // height: 500px;
+    // height: 566px;
     .minBgText{
       background: url(../images/minBgText.png) no-repeat;
       background-size: 100% 100%;
@@ -162,7 +162,7 @@
       width: 87.5%
     }
     .bot{
-      height: 424px;
+      height: 366px;
       border-radius: 8px;
       border: dashed 2px #58a9e3;
       margin-top: 50px;
@@ -193,7 +193,7 @@
         overflow: hidden;
       }
       .awardsBox{
-        height: 320px;
+        height: 264px;
         overflow: hidden;
       }
       li, p{
@@ -409,11 +409,11 @@
       }
     }
     li.min{
-      height: 495px;
+      height: 444px;
       .bot{
-        height: 395px;
+        height: 344px;
         .awardsBox{
-          height: 293px;
+          height: 243px;
         }
       }
     }
