@@ -33,7 +33,7 @@ class prizes extends Component {
         <h4>全国奖品池</h4>
         <ul>
           <li>
-            <h5>珠海澳网门票奖  25名</h5>
+            <h5>澳网外卡赛奖  25名</h5>
             <div></div>
             <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
           </li>

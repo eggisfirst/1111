@@ -122,7 +122,7 @@ class AwardListPC extends Component {
             let type
             switch(item.type){
               case 'ticket':
-              type = '珠海澳网门票奖'
+              type = '澳网外卡赛奖'
               break;
             case 'bedding1':
               type = '床品奖'
@@ -241,15 +241,16 @@ class AwardListPC extends Component {
         </li>
 
         <li className="right" style={styleComponent.boxHeight}>
-          <div className='rightBgText'></div>
           <h4>全国奖品池</h4>
           <ul>
             <div className='rowup'>
             <div>
             <li>
-              <h5>珠海澳网门票奖  25名</h5>
+              <h5>澳网外卡赛奖  25名</h5>
               <div></div>
               <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
+              <p><span>澳大利亚网球公开赛-墨尔本门票，为满额直送，不参与抽奖，</span></p>
+              <p><span>详情请到本地慕思门店咨询。</span></p>
             </li>
             <li>
               <h5>育儿奖  244名</h5>
@@ -312,9 +313,11 @@ class AwardListPC extends Component {
             </div>
             <div>
             <li>
-              <h5>珠海澳网门票奖  25名</h5>
+              <h5>澳网外卡赛奖  25名</h5>
               <div></div>
               <p><span>澳网亚太区外卡赛-珠海观赛门票</span></p>
+              <p><span>澳大利亚网球公开赛-墨尔本门票，为满额直送，不参与抽奖，</span></p>
+              <p><span>详情请到本地慕思门店咨询。</span></p>
             </li>
             <li>
               <h5>育儿奖  244名</h5>

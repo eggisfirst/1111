@@ -80,7 +80,7 @@ class awardList extends Component {
             let type
             switch(item.type){
               case 'ticket':
-                type = '珠海澳网门票奖'
+                type = '澳网外卡赛奖'
                 break;
               case 'bedding1':
                 type = '床品奖'

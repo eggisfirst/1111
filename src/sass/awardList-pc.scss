@@ -230,15 +230,15 @@
     min-height: 440px;
     height: 260px;
     position: relative;
-    .rightBgText{
-      background: url(../images/rightBgText.png) no-repeat;
-      background-size: 100% 100%;
-      width: 450px;
-      height: 14px;
-      position: absolute;
-      top: -38px;
-      left: -50px;
-    }
+    // .rightBgText{
+    //   background: url(../images/rightBgText.png) no-repeat;
+    //   background-size: 100% 100%;
+    //   width: 450px;
+    //   height: 14px;
+    //   position: absolute;
+    //   top: -38px;
+    //   left: -50px;
+    // }
     h4{
       font-size: 32px;
       color: #fff;
@@ -262,7 +262,7 @@
       overflow: hidden;
       // overflow-y: hidden;
       .rowup{
-        height: 609px;
+        height: 654px;
         -webkit-animation: 10s rowup linear infinite normal;
         animation: 10s rowup linear infinite normal;
         position: relative;
@@ -385,7 +385,7 @@
       }
       li:first-child{
         flex-direction: column;
-        height:120px;
+        height:165px;
         div{
           width: 90%;
           height: 40px;
@@ -393,7 +393,12 @@
           background-size: 100% 100%;
           margin-top: 0px;
           margin-bottom: 0px
-          
+        }
+        span{
+          line-height: .8em
+        }
+        p:last-child{
+          margin-bottom: 16px
         }
       }
     }
