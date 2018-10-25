@@ -276,7 +276,7 @@ class AwardListPC extends Component {
               <div>
                 <strong className="m3"></strong>
                 <p>
-                  <span>家纺芯逸桑蚕丝夏被</span>
+                  <span>芯逸桑蚕丝夏被</span>
                   <span>型号DZZ1-016(100名）</span>
                 </p>
               </div>
@@ -343,7 +343,7 @@ class AwardListPC extends Component {
               <div>
                 <strong className="m3"></strong>
                 <p>
-                  <span>家纺芯逸桑蚕丝夏被</span>
+                  <span>芯逸桑蚕丝夏被</span>
                   <span>型号DZZ1-016(100名）</span>
                 </p>
               </div>
