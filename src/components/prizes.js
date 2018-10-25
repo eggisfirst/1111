@@ -42,14 +42,14 @@ class prizes extends Component {
             <div>
               <strong className="m1"></strong>
               <p>
-                <span>儿童功能书桌椅</span>
+                <span>儿童功能书桌椅（4名）</span>
               </p>
             </div>
             <div>
             <strong className="m2"></strong>
               <p>
-                <span>儿童可调硅胶枕(120名）</span>
-                <span>幼儿舒睡硅胶枕(120名）</span>
+                <span>儿童可调硅胶枕（120名）</span>
+                <span>幼儿舒睡硅胶枕（120名）</span>
               </p>
             </div>
             <div className='line1'></div>
@@ -62,13 +62,13 @@ class prizes extends Component {
               <strong className="m3"></strong>
               <p>
                 <span>芯逸桑蚕丝夏被</span>
-                <span>型号DZZ1-016(100名）</span>
+                <span>型号DZZ1-016（100名）</span>
               </p>
             </div>
             <div>
               <strong className="m4"></strong>
               <p>
-                <span>伊芙卡罗毯(600名）</span> 
+                <span>伊芙卡罗毯（600名）</span> 
               </p>
             </div>
             <div className='line1'></div>
@@ -81,14 +81,14 @@ class prizes extends Component {
               <strong className="m5"></strong>
               <p>
                 <span>眼精灵按摩眼罩</span>
-                <span>GZZ1-009(120名）</span>
+                <span>GZZ1-009（120名）</span>
               </p>
             </div>
             <div>
               <strong className="m6"></strong>
               <p>
                 <span>情侣枕</span> 
-                <span>PZZ1-014(400名）</span>
+                <span>PZZ1-014（400名）</span>
               </p>
             </div>
             <div className='line1'></div>
