@@ -96,14 +96,8 @@ class AwardListPC extends Component {
     let awardList = document.getElementById('awardList')
     let scrollTop
     this.setState({width: this.refs.drawList_pc.clientWidth})
-    window.scroll(0, 100)
-    setInterval(function() {
-      awardsBox.scrollBy(0,1)
-      if (scrollTop === awardsBox.scrollTop) {
-        awardsBox.scrollTo(0, 0)
-      }
-      scrollTop = awardsBox.scrollTop
-    }, 18)
+   
+ 
   }
   render () {
     const styleComponent = {
