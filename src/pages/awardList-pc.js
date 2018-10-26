@@ -73,6 +73,12 @@ class AwardListPC extends Component {
           myPoint2[0].classList.add('changeBgPoint')
           myPoint3[0].classList.add('changeBgPoint')
           myPoint4[0].classList.add('changeBgPoint') 
+        }else if(mouth > 10 && date > 3){
+          myTimeLine[0].classList.add('timeLineChangeWidth4')
+          myPoint1[0].classList.add('changeBgPoint')
+          myPoint2[0].classList.add('changeBgPoint')
+          myPoint3[0].classList.add('changeBgPoint')
+          myPoint4[0].classList.add('changeBgPoint') 
         }
       }
    
@@ -189,7 +195,7 @@ class AwardListPC extends Component {
     )
     return (
       <ul ref="drawList_pc" className="drawList-pc" style={styleComponent.draw}>
-        <li className="left" style={styleComponent.boxHeight}>
+        <li className="left" >
           <div className="top">
             <h2>{
               Variable.dateCount(new Date().getDate())
@@ -240,7 +246,7 @@ class AwardListPC extends Component {
           </div>
         </li>
 
-        <li className="right" style={styleComponent.boxHeight}>
+        <li className="right">
           <h4>全国奖品池</h4>
           <ul>
             <div className='rowup'>
