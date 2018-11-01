@@ -37,6 +37,10 @@ class AwardListPC extends Component {
         }
         _this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})
         // console.log('successsss', _this.setState);
+        let myUl = document.getElementById('egg_ul') 
+        console.log(5555,myUl.scrollHeight)
+        let myList = document.getElementsByClassName('awardList')[0]
+        myList.style.height = myUl.scrollHeight + 'px'
       })
       .catch(function (error) {
         console.log(error);
@@ -96,8 +100,7 @@ class AwardListPC extends Component {
     let awardList = document.getElementById('awardList')
     let scrollTop
     this.setState({width: this.refs.drawList_pc.clientWidth})
-   
- 
+    
   }
   render () {
     const styleComponent = {
@@ -232,10 +235,15 @@ class AwardListPC extends Component {
             </p>
             <div className="awardsBox" id="awardsBox">
               {/* <marquee behavior="scroll" align="top" direction="up"> */}
-                <ul id="awardList">
+                <div className='awardList'>
+                <ul id='egg_ul'>
+                  {awards}
+                </ul>
+                <ul >
                   {awards}
                 </ul>
               {/* </marquee> */}
+            </div>
             </div>
           </div>
         </li>
@@ -379,8 +387,9 @@ class AwardListPC extends Component {
             </li>
             </div>
             </div>
-            <div className='bottom-show'></div>
+           
           </ul>
+          <div className='bottom-show'></div>
         </li>
         
       </ul>
