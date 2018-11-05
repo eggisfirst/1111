@@ -43,9 +43,6 @@ class Header extends Component {
       console.log('today is',date,mouth)
       let myTimeLine = document.getElementsByClassName('timeLine')
       let myPoint = document.getElementsByTagName('li')
-      if(mouth == 9){
-
-      }else{
         if(date > 11 && date < 19){
           console.log(date)
           myTimeLine[0].classList.add('timeLineChangeWidth1')
@@ -65,9 +62,13 @@ class Header extends Component {
           myPoint[1].classList.add('changeBgPoint')
           myPoint[2].classList.add('changeBgPoint')
           myPoint[3].classList.add('changeBgPoint') 
+        }else if(mouth > 10 && date > 3){
+          myTimeLine[0].classList.add('timeLineChangeWidth4')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+          myPoint[2].classList.add('changeBgPoint')
+          myPoint[3].classList.add('changeBgPoint') 
         }
-      }
-   
     }
 
     this.getAwards = (_this, date) => {

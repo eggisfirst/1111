@@ -35,8 +35,6 @@ let init = (function() {
         }
       }else if(mouth == 11){
         return (3 - date)
-      }else if(mouth == 9){
-        return (31 - date + 12)
       }
     },
     getAwards: (date) => {
@@ -52,7 +50,8 @@ let init = (function() {
           .then(function (res) {
             if (res) {
               key = true
-              resolve(res)            
+              resolve(res) 
+              // console.log(2222)           
             }
           })
           .catch(function (error) {

@@ -20,24 +20,32 @@ class awardList extends Component {
       this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})      
     }
 
-    // 获取抽奖客户列表
+   // 获取抽奖客户列表
     this.getAwards = () => {
       let _this = this
-      axios.get(`${Variable.path}getPrizes`, {
-        params: {
-          date: '2018-10-16',
-          type:'1111'
+      let date = new Date().getDate()
+      let mouth = 11
+        if(date < 19 && date > 11){
+          date = 12
+        }else if (date > 18 && date < 26 ){
+          date = 19
+        }else if (date > 25 || date < 3){
+          date = 26
+        }else if(date == 3){
+          mouth = 12
+          date = 3
         }
-      })
+      let date1 = '2018-' + mouth + '-' + date
+      Variable.getAwards(date1)
       .then(function (res) {
-        console.log('succesee',res.data.data,res.data.data.ticket)
+        console.log('succesee',res)
         if (res.data) {
           _this.props.changeTotalAmount(res.data.totalAmount)
           if (res.data.data) {
-            console.log(9999,res.data.data)
+            // console.log(9999,res.data.data)
             res = res.data.data
             _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])    
-            console.log(21122)
+            // console.log(21122)
           }
         }
         // _this.updateAwards(res)
@@ -46,6 +54,7 @@ class awardList extends Component {
         console.log(error)
       })
     }
+   
   }
   
   componentWillReceiveProps(nextProps){

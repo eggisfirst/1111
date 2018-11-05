@@ -19,16 +19,22 @@ class AwardListPC extends Component {
     }
     this.getAwards = () => {
       let _this = this
-      axios.get(`${Variable.path}getPrizes`, {
-        params: {
-          date: '2018-10-16',
-          type:'1111'
-          // province: '辽宁',
-          // city: '大连市'
+      let date = new Date().getDate()
+      let mouth = 11
+        if(date < 19 && date > 11){
+          date = 12
+        }else if (date > 18 && date < 26 ){
+          date = 19
+        }else if (date > 25 || date < 3){
+          date = 26
+        }else if(date == 3){
+          mouth = 12
+          date = 3
         }
-      })
+      let date1 = '2018-' + mouth + '-' + date
+      Variable.getAwards(date1)
       .then(function (res) {
-        console.log(999888777, res)
+        console.log(999888777, res,date1)
         if (res.data) {
           _this.setState({totalAmount: res.data.totalAmount})
           if (res.data.data) {
@@ -55,36 +61,33 @@ class AwardListPC extends Component {
       let myPoint2 = document.getElementsByClassName('li-2')
       let myPoint3 = document.getElementsByClassName('li-3')
       let myPoint4 = document.getElementsByClassName('li-4')
-      if(mouth == 9){
-
-      }else{
-        if(date > 11 && date < 19){
-          console.log(date)
-          myTimeLine[0].classList.add('timeLineChangeWidth1')
-          myPoint1[0].classList.add('changeBgPoint')
-        }else if(date > 18 && date < 26 ){
-          myTimeLine[0].classList.add('timeLineChangeWidth2')
-          myPoint1[0].classList.add('changeBgPoint')
-          myPoint2[0].classList.add('changeBgPoint')
-        }else if(date > 25 || (date < 3 && mouth == 11)){
-          myTimeLine[0].classList.add('timeLineChangeWidth3')
-          myPoint1[0].classList.add('changeBgPoint')
-          myPoint2[0].classList.add('changeBgPoint')
-          myPoint3[0].classList.add('changeBgPoint')
-        }else if(mouth == 11 && date == 3){
-          myTimeLine[0].classList.add('timeLineChangeWidth4')
-          myPoint1[0].classList.add('changeBgPoint')
-          myPoint2[0].classList.add('changeBgPoint')
-          myPoint3[0].classList.add('changeBgPoint')
-          myPoint4[0].classList.add('changeBgPoint') 
-        }else if(mouth > 10 && date > 3){
-          myTimeLine[0].classList.add('timeLineChangeWidth4')
-          myPoint1[0].classList.add('changeBgPoint')
-          myPoint2[0].classList.add('changeBgPoint')
-          myPoint3[0].classList.add('changeBgPoint')
-          myPoint4[0].classList.add('changeBgPoint') 
-        }
+      if(date > 11 && date < 19){
+        console.log(date)
+        myTimeLine[0].classList.add('timeLineChangeWidth1')
+        myPoint1[0].classList.add('changeBgPoint')
+      }else if(date > 18 && date < 26 ){
+        myTimeLine[0].classList.add('timeLineChangeWidth2')
+        myPoint1[0].classList.add('changeBgPoint')
+        myPoint2[0].classList.add('changeBgPoint')
+      }else if(date > 25 || (date < 3 && mouth == 11)){
+        myTimeLine[0].classList.add('timeLineChangeWidth3')
+        myPoint1[0].classList.add('changeBgPoint')
+        myPoint2[0].classList.add('changeBgPoint')
+        myPoint3[0].classList.add('changeBgPoint')
+      }else if(mouth == 11 && date == 3){
+        myTimeLine[0].classList.add('timeLineChangeWidth4')
+        myPoint1[0].classList.add('changeBgPoint')
+        myPoint2[0].classList.add('changeBgPoint')
+        myPoint3[0].classList.add('changeBgPoint')
+        myPoint4[0].classList.add('changeBgPoint') 
+      }else if(mouth > 10 && date > 3){
+        myTimeLine[0].classList.add('timeLineChangeWidth4')
+        myPoint1[0].classList.add('changeBgPoint')
+        myPoint2[0].classList.add('changeBgPoint')
+        myPoint3[0].classList.add('changeBgPoint')
+        myPoint4[0].classList.add('changeBgPoint') 
       }
+      
    
     }
   }
@@ -96,9 +99,6 @@ class AwardListPC extends Component {
   }
   componentDidMount () {
     this.getLine()
-    let awardsBox = document.getElementById('awardsBox')
-    let awardList = document.getElementById('awardList')
-    let scrollTop
     this.setState({width: this.refs.drawList_pc.clientWidth})
     
   }
