@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { changeAwards } from '../actions'
 import '../sass/components/awardList.scss'
 
-import bannerImg from '../images/top.jpg'
+// import bannerImg from '../images/top.jpg'
 
 class awardList extends Component {
   constructor (props) {
@@ -17,7 +17,7 @@ class awardList extends Component {
 
     // 更新抽奖列表界面
     this.updateAwards = (res) => {
-      this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2]})      
+      this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})      
     }
 
     // 获取抽奖客户列表
@@ -30,12 +30,13 @@ class awardList extends Component {
         }
       })
       .then(function (res) {
-        console.log('succesee',res.data.data.ticket,res.data.data.bedding2)
+        console.log('succesee',res.data.data,res.data.data.ticket)
         if (res.data) {
           _this.props.changeTotalAmount(res.data.totalAmount)
           if (res.data.data) {
+            console.log(9999,res.data.data)
             res = res.data.data
-            _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2])    
+            _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])    
             console.log(21122)
           }
         }
@@ -79,7 +80,7 @@ class awardList extends Component {
             let type
             switch(item.type){
               case 'ticket':
-                type = '旅游奖'
+                type = '珠海澳网门票奖'
                 break;
               case 'bedding1':
                 type = '床品奖'
@@ -87,13 +88,13 @@ class awardList extends Component {
               case 'bedding2':
                 type = '床品奖'
                 break;
-              case 'bring_up1':
+              case 'bring_up_1':
                 type = '育儿奖'
                 break;
-              case 'bring_up2':
+              case 'bring_up_2':
                 type = '育儿奖'
                 break;
-              case 'bring_up3':
+              case 'bring_up_3':
                 type = '育儿奖'
                 break;
               case 'help_sleep1':
@@ -113,7 +114,7 @@ class awardList extends Component {
             let type
             switch(item.type){
               case 'ticket':
-                type = '澳洲新西兰之旅'
+                type = '澳网亚太区外卡赛-珠海观赛门票'
                 break;
               case 'bedding1':
                 type = '家纺芯逸桑蚕丝夏被'
@@ -121,13 +122,13 @@ class awardList extends Component {
               case 'bedding2':
                 type = '凯奇床品四件套'
                 break;
-              case 'bring_up1':
+              case 'bring_up_1':
                 type = '眼精灵按摩眼罩'
                 break;
-              case 'bring_up2':
+              case 'bring_up_2':
                 type = '情侣枕'
                 break;
-              case 'bring_up3':
+              case 'bring_up_3':
                 type = '情侣枕'
                 break;
               case 'help_sleep1':

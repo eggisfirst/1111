@@ -35,6 +35,8 @@ let init = (function() {
         }
       }else if(mouth == 11){
         return (3 - date)
+      }else if(mouth == 9){
+        return (31 - date + 7)
       }
     },
     getAwards: (date) => {

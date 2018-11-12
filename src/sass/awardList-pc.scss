@@ -63,7 +63,7 @@
     }
     .bot{
       h2{
-        font-size: 88px;
+        font-size: 42px;
       }
     }
   }
@@ -75,105 +75,143 @@
     background: none;
     box-shadow: none;
     height: 500px;
-    .top{
+    // .top{
+    //   position: relative;
+    //   height: 44px;
+    //   li{
+    //     position: absolute;
+    //     width: 38px;
+    //     height: 40px;
+    //     bottom: -20px;
+    //     background: url(../images/point2.png) no-repeat;
+    //     background-size: 100% 100%;
+    //     z-index: 1000;
+    //     span{
+    //       position: absolute;
+    //       color: #fff;
+    //       display: block;
+    //       width: 100px;
+    //       text-align: center;
+    //     }
+    //   }
+    //   li:nth-child(1){
+    //     left: 30px;
+    //   }
+    //   li:nth-child(2){
+    //     left: 230px;
+    //   }
+    //   li:nth-child(3){
+    //     right: 230px;
+    //   }
+    //   li:nth-child(4){
+    //     right: 30px;
+    //   }
+    //   li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4) {
+    //     span{
+    //       left: -30px;
+    //     }
+    //     span:first-child{
+    //       bottom: 45px;
+    //     }
+    //     span:last-child{
+    //       bottom: -20px;
+    //     }
+    //   }
+    // }
+    // .top::after{
+    //   display: block;
+    //   position: absolute;
+    //   width: 250px;
+    //   bottom: -2px;
+    //   content: '';
+    //   height: 2.5px;
+    //   z-index: 0;
+    // }
+   
+
+    // .date4{
+    //   border-bottom: 2px solid  #ade2f8;
+    //   li:nth-child(4){
+    //     background: url(../images/point2.png) no-repeat;
+    //     background-size: 100% 100%;
+    //   }
+    // }
+    .timeLine{
+      display: flex;
       position: relative;
-      height: 44px;
-      li{
+      height: 46px;
+      z-index: 1000;
+      
+      .line{
         position: absolute;
-        width: 38px;
-        height: 40px;
-        bottom: -20px;
+        top: 50%;
+        height: 4px;
+        width: 100%;
+        margin-top: 10px;
+        background: #ade2f8;
+        z-index: -2;
+      
+      }
+      li{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        
+        p{
+          height: 15px;
+          line-height: 10px;
+          font-size: 18px;
+          
+        }
+        p:first-child{
+          padding-bottom: 35px;
+        }
+        p:last-child{
+          padding-top: 18px;
+        }
+      }
+      li::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        left: 50%;
+        top: 50%;
+        margin: -4px 0 0 -20px;
+        background: url(../images/point2.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      .changeBgPoint::after{
         background: url(../images/point1.png) no-repeat;
         background-size: 100% 100%;
-        z-index: 1000;
-        span{
-          position: absolute;
-          color: #fff;
-          display: block;
-          width: 100px;
-          text-align: center;
-        }
-      }
-      li:nth-child(1){
-        left: 30px;
-      }
-      li:nth-child(2){
-        left: 230px;
-      }
-      li:nth-child(3){
-        right: 230px;
-      }
-      li:nth-child(4){
-        right: 30px;
-      }
-      li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4) {
-        span{
-          left: -30px;
-        }
-        span:first-child{
-          bottom: 45px;
-        }
-        span:last-child{
-          bottom: -20px;
-        }
-      }
     }
-    .top::after{
+    }
+    .timeLine::after{
+      content: '';
       display: block;
       position: absolute;
-      width: 250px;
-      bottom: -2px;
-      content: '';
-      height: 2.5px;
-      z-index: 0;
-    }
-    .date1{
-      border-bottom: 2px solid #ade2f8;
-      li:nth-child(2), li:nth-child(3), li:nth-child(4){
-        background: url(../images/point2.png) no-repeat;
-        background-size: 100% 100%;
-      }
-    }
-    .date1::after{
-      width: 50px;
+      height: 4px;
+      width:0;
+      top: 50%;
       left: 0;
-      background-color:  #badf6e;
+      margin-top: 10px;
+      background: #badf6e;
+      z-index: -1;
     }
-    .date2{
-      border-bottom: 2px solid #ade2f8;
-      li:nth-child(3), li:nth-child(4){
-        background: url(../images/point2.png) no-repeat;
-        background-size: 100% 100%;
-      }
+    .timeLineChangeWidth1::after{
+      width: 12.5%
     }
-    .date2::after{
-      width: 250px;
-      left: 0;
-      background-color:  #badf6e;
+    .timeLineChangeWidth2::after{
+      width: 37.5%
     }
-    .date3{
-      border-bottom: 2px solid  #badf6e;
-      li:nth-child(4){
-        background: url(../images/point2.png) no-repeat;
-        background-size: 100% 100%;
-      }
+    .timeLineChangeWidth3::after{
+      width: 62.5%
     }
-    .date3::after{
-      width: 250px;
-      right: 0;
-      background-color: #ade2f8;
-    }
-    .date4{
-      border-bottom: 2px solid  #badf6e;
-      li:nth-child(4){
-        background: url(../images/point2.png) no-repeat;
-        background-size: 100% 100%;
-      }
-    }
-    .date4::after{
-      width: 50px;
-      right: 0;
-      background-color: #ade2f8;
+    .timeLineChangeWidth4::after{
+      width: 87.5%
     }
     .bot{
       height: 400px;
@@ -182,6 +220,7 @@
       margin-top: 50px;
       background: rgba(39, 74, 100, .4);
       box-shadow: 0px 0px 4px 1px #58a9e3;
+      
       h4{
         flex: 1;
         font-size: 32px;
@@ -193,6 +232,7 @@
         background: #58a9e3;
         span{
           color: #fff;
+          
         }
       }
       span{
@@ -201,10 +241,12 @@
         color: #ada1da;
         text-align: center;
         line-height: 1.8em;
+        margin-right: .4em;
+        overflow: hidden;
       }
       .awardsBox{
         height: 300px;
-        overflow-x: hidden;
+        overflow: hidden;
       }
       li, p{
         display: flex;

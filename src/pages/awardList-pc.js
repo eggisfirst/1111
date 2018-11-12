@@ -12,16 +12,17 @@ class AwardListPC extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
       awards: [],
-      totalAmount: '1898'
+      totalAmount: ''
     }
     this.Variable = {
       boxHeight: this.state.height - (this.state.width * 0.26)
     }
     this.getAwards = () => {
       let _this = this
-      axios.get(`${Variable.path}`, {
+      axios.get(`${Variable.path}getPrizes`, {
         params: {
-          date: '2018-09-09',
+          date: '2018-10-16',
+          type:'1111'
           // province: '辽宁',
           // city: '大连市'
         }
@@ -34,31 +35,67 @@ class AwardListPC extends Component {
             res = res.data.data
           }
         }
-        _this.setState({awards: [...res.firstPrize, ...res.secondPrize1, ...res.secondPrize2, ...res.thirdPrize1, ...res.thirdPrize2]})
-        // console.log('successsss', _this.setState);
+        _this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})
+        console.log('successsss', _this.setState);
       })
       .catch(function (error) {
-        // console.log(error);
+        console.log(error);
       });
     }
+    this.getLine = () => {
+      let date = new Date().getDate()
+      let mouth = new Date().getMonth()
+      console.log('today is',date,mouth)
+      let myTimeLine = document.getElementsByClassName('timeLine')
+      let myPoint = document.getElementsByTagName('li')
+      console.log('mypoint',myPoint[1])
+      if(mouth == 9){
+
+      }else{
+        if(date > 11 && date < 19){
+          console.log(date)
+          myTimeLine[0].classList.add('timeLineChangeWidth1')
+          myPoint[0].classList.add('changeBgPoint')
+        }else if(date > 18 && date < 26 ){
+          myTimeLine[0].classList.add('timeLineChangeWidth2')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+        }else if(date > 25 || (date < 3 && mouth == 11)){
+          myTimeLine[0].classList.add('timeLineChangeWidth3')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+          myPoint[2].classList.add('changeBgPoint')
+        }else if(mouth == 11 && date == 3){
+          myTimeLine[0].classList.add('timeLineChangeWidth4')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+          myPoint[2].classList.add('changeBgPoint')
+          myPoint[3].classList.add('changeBgPoint') 
+        }
+      }
+   
+    }
   }
+
+  
   componentWillMount() {
     this.getAwards()
     console.log(2333333)
   }
   componentDidMount () {
+    this.getLine()
     let awardsBox = document.getElementById('awardsBox')
     let awardList = document.getElementById('awardList')
     let scrollTop
     this.setState({width: this.refs.drawList_pc.clientWidth})
     // window.scroll(0, 100)
-    setInterval(function() {
-      awardsBox.scrollBy(0,1)
-      if (scrollTop === awardsBox.scrollTop) {
-        awardsBox.scrollTo(0, 0)
-      }
-      scrollTop = awardsBox.scrollTop
-    }, 10)
+    // setInterval(function() {
+    //   awardsBox.scrollBy(0,1)
+    //   if (scrollTop === awardsBox.scrollTop) {
+    //     awardsBox.scrollTo(0, 0)
+    //   }
+    //   scrollTop = awardsBox.scrollTop
+    // }, 18)
   }
   render () {
     const styleComponent = {
@@ -82,21 +119,30 @@ class AwardListPC extends Component {
           (() => {
             let type
             switch(item.type){
-              case 'firstPrize':
-                type = '旅游奖'
-                break;
-              case 'secondPrize1':
-                type = '床品奖'
-                break;
-              case 'secondPrize2':
-                type = '床品奖'
-                break;
-              case 'thirdPrize1':
-                type = '助眠奖'
-                break;
-              case 'thirdPrize2':
-                type = '助眠奖'
-                break;
+              case 'ticket':
+              type = '珠海澳网门票奖'
+              break;
+            case 'bedding1':
+              type = '床品奖'
+              break;
+            case 'bedding2':
+              type = '床品奖'
+              break;
+            case 'bring_up_1':
+              type = '育儿奖'
+              break;
+            case 'bring_up_2':
+              type = '育儿奖'
+              break;
+            case 'bring_up_3':
+              type = '育儿奖'
+              break;
+            case 'help_sleep1':
+              type = '助眠奖'
+              break;
+            case 'help_sleep2':
+              type = '助眠奖'
+              break;
             default:
               return ''
             }
@@ -107,19 +153,28 @@ class AwardListPC extends Component {
           (() => {
             let type
             switch(item.type){
-              case 'firstPrize':
-                type = '澳洲新西兰之旅'
+              case 'ticket':
+                type = '澳网亚太区外卡赛-珠海观赛门票'
                 break;
-              case 'secondPrize1':
+              case 'bedding1':
                 type = '家纺芯逸桑蚕丝夏被'
                 break;
-              case 'secondPrize2':
+              case 'bedding2':
                 type = '凯奇床品四件套'
                 break;
-              case 'thirdPrize1':
+              case 'bring_up_1':
                 type = '眼精灵按摩眼罩'
                 break;
-              case 'thirdPrize2':
+              case 'bring_up_2':
+                type = '情侣枕'
+                break;
+              case 'bring_up_3':
+                type = '情侣枕'
+                break;
+              case 'help_sleep1':
+                type = '情侣枕'
+                break;
+              case 'help_sleep2':
                 type = '情侣枕'
                 break;
             default:
@@ -141,28 +196,29 @@ class AwardListPC extends Component {
             <h5>距下一轮抽奖还有</h5>
           </div>
           <div className="bot">
-            <h2>{(this.state.totalAmount)}<span>人</span></h2>
-            <h5>参与人数</h5>
+            <h2>{Variable.priceSwitch(this.state.totalAmount)}<span>元</span></h2>
+            <h5>火爆销售额</h5>
           </div> 
         </li>
         <li className="min">
-          <ul className="top date4">
+          <ul className="top timeLine">
             <li>
-              <span>11月12日</span>
-              <span>17:00</span>
+              <p>11月12日</p>
+              <p>17:00</p>
             </li>
             <li>
-              <span>11月19日</span>
-              <span>17:00</span>
+              <p>11月19日</p>
+              <p>17:00</p>
             </li>
             <li>
-              <span>11月26日</span>
-              <span>17:00</span>
+              <p>11月26日</p>
+              <p>17:00</p>
             </li>
             <li>
-              <span>12月03日</span>
-              <span>17:00</span>
+              <p>12月03日</p>
+              <p>17:00</p>
             </li>
+            <div className="line"></div>
           </ul>
           <div  className="bot">
             <h4>中奖信息</h4>

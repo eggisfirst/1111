@@ -43,26 +43,31 @@ class Header extends Component {
       console.log('today is',date,mouth)
       let myTimeLine = document.getElementsByClassName('timeLine')
       let myPoint = document.getElementsByTagName('li')
-      if(date > 11 && date < 19){
-        console.log(date)
-        myTimeLine[0].classList.add('timeLineChangeWidth1')
-        myPoint[0].classList.add('changeBgPoint')
-      }else if(date > 18 && date < 26 ){
-        myTimeLine[0].classList.add('timeLineChangeWidth2')
-        myPoint[0].classList.add('changeBgPoint')
-        myPoint[1].classList.add('changeBgPoint')
-      }else if(date > 25 || (date < 3 && mouth == 11)){
-        myTimeLine[0].classList.add('timeLineChangeWidth3')
-        myPoint[0].classList.add('changeBgPoint')
-        myPoint[1].classList.add('changeBgPoint')
-        myPoint[2].classList.add('changeBgPoint')
-      }else if(mouth == 11 && date == 3){
-        myTimeLine[0].classList.add('timeLineChangeWidth4')
-        myPoint[0].classList.add('changeBgPoint')
-        myPoint[1].classList.add('changeBgPoint')
-        myPoint[2].classList.add('changeBgPoint')
-        myPoint[3].classList.add('changeBgPoint') 
+      if(mouth == 9){
+
+      }else{
+        if(date > 11 && date < 19){
+          console.log(date)
+          myTimeLine[0].classList.add('timeLineChangeWidth1')
+          myPoint[0].classList.add('changeBgPoint')
+        }else if(date > 18 && date < 26 ){
+          myTimeLine[0].classList.add('timeLineChangeWidth2')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+        }else if(date > 25 || (date < 3 && mouth == 11)){
+          myTimeLine[0].classList.add('timeLineChangeWidth3')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+          myPoint[2].classList.add('changeBgPoint')
+        }else if(mouth == 11 && date == 3){
+          myTimeLine[0].classList.add('timeLineChangeWidth4')
+          myPoint[0].classList.add('changeBgPoint')
+          myPoint[1].classList.add('changeBgPoint')
+          myPoint[2].classList.add('changeBgPoint')
+          myPoint[3].classList.add('changeBgPoint') 
+        }
       }
+   
     }
 
     this.getAwards = (_this, date) => {
@@ -126,7 +131,7 @@ class Header extends Component {
         </ul>
         <h5>距离下一轮抽奖还有：<span>{
           Variable.dateCount(new Date().getDate())
-        }</span>天    参与人数：<span>{(this.props.totalAmount)}</span>人</h5>
+        }</span>天    火爆销售额：<span>{Variable.priceSwitch(this.props.totalAmount)}</span>元</h5>
 			</div>
     )
   }
