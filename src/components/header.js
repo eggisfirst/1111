@@ -19,10 +19,7 @@ class Header extends Component {
       numbers: [1, 2, 3, 4, 5, 6, 7, 8]
     }
     
-    this.changeAwards = (arr) => {
-      this.props.changeAwards(arr)
-    }
-
+  
     this.dateChange1 = () => {
       this.getAwards(this, '2018-11-12')
       
@@ -88,9 +85,7 @@ class Header extends Component {
           console.log('click',res.data)
           if (res.data.data) {
             res = res.data.data
-            if (res.ticket) {
-              _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])
-            }
+            _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])
           }
         }
       })
