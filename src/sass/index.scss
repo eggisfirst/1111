@@ -51,7 +51,7 @@
 @keyframes changeLong {
   0% {
     width: 0px;
-    color: #755cd3;
+    
     font-size: 0;
   }
   80% {
@@ -62,14 +62,13 @@
   }
   100% {
     width: 94px;
-    color: #fff;
     font-size: 16px;
   }
 }
 @keyframes changeShort {
   0% {
     width: 94px;
-    color: #755cd3;
+   
     font-size: 16px;
   }
   20% {
@@ -79,7 +78,7 @@
   }
   100% {
     width: 0px;
-    color: #fff;
+
     font-size: 0px;
   }
 }

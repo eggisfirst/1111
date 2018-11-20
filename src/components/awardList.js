@@ -38,14 +38,15 @@ class awardList extends Component {
       let date1 = '2018-' + mouth + '-' + date
       Variable.getAwards(date1)
       .then(function (res) {
-        console.log('succesee',res)
+        // console.log('succesee',res)
         if (res.data) {
           _this.props.changeTotalAmount(res.data.totalAmount)
           if (res.data.data) {
             // console.log(9999,res.data.data)
             res = res.data.data
-            _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])    
+            _this.props.changeAwards([...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])    
             // console.log(21122)
+           
           }
         }
         // _this.updateAwards(res)
@@ -57,17 +58,20 @@ class awardList extends Component {
    
   }
   
-  componentWillReceiveProps(nextProps){
-    if(this.props != nextProps) {
-      this.setState({awards: nextProps.awards})
-    }
-  }
+  // componentWillReceiveProps(nextProps){
+  //   if(this.props != nextProps) {
+  //     this.setState({awards: nextProps.awards})
+  //     console.log('gengxin',this.props)
+  //   }
+  // }
 
 	componentDidMount () {
-    this.props.changeAwards([1, 2, 3, 4, 5, 6, 7, 8])
+    // this.props.changeAwards([1, 2, 3, 4, 5, 6, 7, 8])
     // this.props.changeTotalAmount(1000)
-    this.getAwards('2018-10-16')
-    console.log(1112222, this.props.status)
+    
+    this.getAwards()
+    console.log(8888,this.props)
+    // console.log(1112222, this.props.status)
 	}
 
   render () {
@@ -76,7 +80,7 @@ class awardList extends Component {
         display: this.props.status ? 'block' : 'none'
       }
     }
-    const awards = this.state.awards.map((item, i) => 
+    const awards = this.props.awards.map((item, i) => 
       <li key={i}>
         <span>{
           item.username ? Variable.replaceName(item.username) : ''
@@ -172,9 +176,9 @@ class awardList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  todos: state.todos,
-  awards: state.awards
+const mapStateToProps = store => ({
+  todos: store.todos,
+  awards: store.awards
 })
 
 const mapDispatchToProps = dispatch => ({

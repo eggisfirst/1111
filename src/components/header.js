@@ -138,14 +138,14 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  awards: state.awards
+const mapStateToProps = state => ({ //只绑定当前组件相关的属性，
+  awards: state.awards              //传入单一属性  （map 映射）
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({   //组件告诉action要做什么
   changeAwards: (arr) => dispatch(changeAwards(arr))
 })
 export default connect(
-  mapStateToProps,
+  // mapStateToProps,
   mapDispatchToProps
-)(Header)
+)(Header)     //上面定义的关联方法绑定到指定的组件上

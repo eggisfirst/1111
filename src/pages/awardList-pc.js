@@ -41,7 +41,7 @@ class AwardListPC extends Component {
             res = res.data.data
           }
         }
-        _this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})
+        _this.setState({awards: [...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})
         // console.log('successsss', _this.setState);
         let myUl = document.getElementById('egg_ul') 
         console.log(5555,myUl.scrollHeight)
