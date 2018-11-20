@@ -28,13 +28,13 @@ class Header extends Component {
       
     }
     this.dateChange2 = () => {
-      this.getAwards(this, '2018-11-19')
+      this.getAwards1(this, '2018-11-19')
     }
     this.dateChange3 = () => {
-      this.getAwards(this, '2018-11-26')
+      this.getAwards1(this, '2018-11-26')
     }
     this.dateChange4 = () => {
-      this.getAwards(this, '2018-12-03')
+      this.getAwards1(this, '2018-12-03')
     }
 
     this.getLine = () => {
@@ -71,6 +71,17 @@ class Header extends Component {
         }
     }
 
+    this.getAwards1 = (_this, date) => {
+      Variable.getAwards(date).then((res) => {
+        if (res.data) {
+          console.log('click',res.data)
+          if (res.data.data) {
+            res = res.data.data
+            _this.props.changeAwards([...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])
+          }
+        }
+      })
+    }
     this.getAwards = (_this, date) => {
       Variable.getAwards(date).then((res) => {
         if (res.data) {
@@ -146,6 +157,6 @@ const mapDispatchToProps = dispatch => ({   //组件告诉action要做什么
   changeAwards: (arr) => dispatch(changeAwards(arr))
 })
 export default connect(
-  // mapStateToProps,
+  mapStateToProps,
   mapDispatchToProps
 )(Header)     //上面定义的关联方法绑定到指定的组件上
