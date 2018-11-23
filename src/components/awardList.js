@@ -114,25 +114,25 @@ class awardList extends Component {
             let type
             switch(item.type){
               case 'ticket':
-                type = '澳网亚太区外卡赛-珠海观赛门票'
+                type = '珠海观赛门票'
                 break;
               case 'bedding1':
-                type = '家纺芯逸桑蚕丝夏被'
+                type = '芯逸桑蚕丝夏被'
                 break;
               case 'bedding2':
-                type = '凯奇床品四件套'
+                type = '伊芙卡罗毯'
                 break;
               case 'bring_up_1':
-                type = '眼精灵按摩眼罩'
+                type = '儿童功能书桌椅'
                 break;
               case 'bring_up_2':
-                type = '情侣枕'
+                type = '儿童可调节硅胶枕'
                 break;
               case 'bring_up_3':
-                type = '情侣枕'
+                type = '幼儿舒睡硅胶枕'
                 break;
               case 'help_sleep1':
-                type = '情侣枕'
+                type = '眼精灵按摩眼罩'
                 break;
               case 'help_sleep2':
                 type = '情侣枕'

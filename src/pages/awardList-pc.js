@@ -36,7 +36,7 @@ class AwardListPC extends Component {
           }
         }
         _this.setState({awards: [...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2]})
-        console.log('successsss', _this.setState);
+        // console.log('successsss', _this.setState);
       })
       .catch(function (error) {
         console.log(error);
@@ -47,30 +47,32 @@ class AwardListPC extends Component {
       let mouth = new Date().getMonth()
       console.log('today is',date,mouth)
       let myTimeLine = document.getElementsByClassName('timeLine')
-      let myPoint = document.getElementsByTagName('li')
-      console.log('mypoint',myPoint[1])
+      let myPoint1 = document.getElementsByClassName('li-1')
+      let myPoint2 = document.getElementsByClassName('li-2')
+      let myPoint3 = document.getElementsByClassName('li-3')
+      let myPoint4 = document.getElementsByClassName('li-4')
       if(mouth == 9){
 
       }else{
         if(date > 11 && date < 19){
           console.log(date)
           myTimeLine[0].classList.add('timeLineChangeWidth1')
-          myPoint[0].classList.add('changeBgPoint')
+          myPoint1[0].classList.add('changeBgPoint')
         }else if(date > 18 && date < 26 ){
           myTimeLine[0].classList.add('timeLineChangeWidth2')
-          myPoint[0].classList.add('changeBgPoint')
-          myPoint[1].classList.add('changeBgPoint')
+          myPoint1[0].classList.add('changeBgPoint')
+          myPoint2[0].classList.add('changeBgPoint')
         }else if(date > 25 || (date < 3 && mouth == 11)){
           myTimeLine[0].classList.add('timeLineChangeWidth3')
-          myPoint[0].classList.add('changeBgPoint')
-          myPoint[1].classList.add('changeBgPoint')
-          myPoint[2].classList.add('changeBgPoint')
+          myPoint1[0].classList.add('changeBgPoint')
+          myPoint2[0].classList.add('changeBgPoint')
+          myPoint3[0].classList.add('changeBgPoint')
         }else if(mouth == 11 && date == 3){
           myTimeLine[0].classList.add('timeLineChangeWidth4')
-          myPoint[0].classList.add('changeBgPoint')
-          myPoint[1].classList.add('changeBgPoint')
-          myPoint[2].classList.add('changeBgPoint')
-          myPoint[3].classList.add('changeBgPoint') 
+          myPoint1[0].classList.add('changeBgPoint')
+          myPoint2[0].classList.add('changeBgPoint')
+          myPoint3[0].classList.add('changeBgPoint')
+          myPoint4[0].classList.add('changeBgPoint') 
         }
       }
    
@@ -88,14 +90,14 @@ class AwardListPC extends Component {
     let awardList = document.getElementById('awardList')
     let scrollTop
     this.setState({width: this.refs.drawList_pc.clientWidth})
-    // window.scroll(0, 100)
-    // setInterval(function() {
-    //   awardsBox.scrollBy(0,1)
-    //   if (scrollTop === awardsBox.scrollTop) {
-    //     awardsBox.scrollTo(0, 0)
-    //   }
-    //   scrollTop = awardsBox.scrollTop
-    // }, 18)
+    window.scroll(0, 100)
+    setInterval(function() {
+      awardsBox.scrollBy(0,1)
+      if (scrollTop === awardsBox.scrollTop) {
+        awardsBox.scrollTo(0, 0)
+      }
+      scrollTop = awardsBox.scrollTop
+    }, 18)
   }
   render () {
     const styleComponent = {
@@ -154,25 +156,25 @@ class AwardListPC extends Component {
             let type
             switch(item.type){
               case 'ticket':
-                type = '澳网亚太区外卡赛-珠海观赛门票'
+                type = '珠海观赛门票'
                 break;
               case 'bedding1':
-                type = '家纺芯逸桑蚕丝夏被'
+                type = '芯逸桑蚕丝薄被'
                 break;
               case 'bedding2':
-                type = '凯奇床品四件套'
+                type = '伊芙卡罗毯'
                 break;
               case 'bring_up_1':
-                type = '眼精灵按摩眼罩'
+                type = '儿童功能书桌椅'
                 break;
               case 'bring_up_2':
-                type = '情侣枕'
+                type = '儿童可调硅胶枕'
                 break;
               case 'bring_up_3':
-                type = '情侣枕'
+                type = '幼儿舒睡硅胶枕'
                 break;
               case 'help_sleep1':
-                type = '情侣枕'
+                type = '眼精灵按摩眼罩'
                 break;
               case 'help_sleep2':
                 type = '情侣枕'
@@ -202,19 +204,19 @@ class AwardListPC extends Component {
         </li>
         <li className="min">
           <ul className="top timeLine">
-            <li>
+            <li className='li-1'>
               <p>11月12日</p>
               <p>17:00</p>
             </li>
-            <li>
+            <li className='li-2'>
               <p>11月19日</p>
               <p>17:00</p>
             </li>
-            <li>
+            <li className='li-3'>
               <p>11月26日</p>
               <p>17:00</p>
             </li>
-            <li>
+            <li className='li-4'>
               <p>12月03日</p>
               <p>17:00</p>
             </li>

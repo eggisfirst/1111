@@ -77,7 +77,7 @@ class Header extends Component {
           if (res.data.data) {
             res = res.data.data
             if (res.ticket) {
-              _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up1, ...res.bring_up2,...res.bring_up3,...res.help_sleep1,...res.help_sleep2])
+              _this.props.changeAwards([...res.ticket, ...res.bedding1, ...res.bedding2, ...res.bring_up_1, ...res.bring_up_2,...res.bring_up_3,...res.help_sleep1,...res.help_sleep2])
             }
           }
         }

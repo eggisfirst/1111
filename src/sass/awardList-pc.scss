@@ -75,67 +75,6 @@
     background: none;
     box-shadow: none;
     height: 500px;
-    // .top{
-    //   position: relative;
-    //   height: 44px;
-    //   li{
-    //     position: absolute;
-    //     width: 38px;
-    //     height: 40px;
-    //     bottom: -20px;
-    //     background: url(../images/point2.png) no-repeat;
-    //     background-size: 100% 100%;
-    //     z-index: 1000;
-    //     span{
-    //       position: absolute;
-    //       color: #fff;
-    //       display: block;
-    //       width: 100px;
-    //       text-align: center;
-    //     }
-    //   }
-    //   li:nth-child(1){
-    //     left: 30px;
-    //   }
-    //   li:nth-child(2){
-    //     left: 230px;
-    //   }
-    //   li:nth-child(3){
-    //     right: 230px;
-    //   }
-    //   li:nth-child(4){
-    //     right: 30px;
-    //   }
-    //   li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4) {
-    //     span{
-    //       left: -30px;
-    //     }
-    //     span:first-child{
-    //       bottom: 45px;
-    //     }
-    //     span:last-child{
-    //       bottom: -20px;
-    //     }
-    //   }
-    // }
-    // .top::after{
-    //   display: block;
-    //   position: absolute;
-    //   width: 250px;
-    //   bottom: -2px;
-    //   content: '';
-    //   height: 2.5px;
-    //   z-index: 0;
-    // }
-   
-
-    // .date4{
-    //   border-bottom: 2px solid  #ade2f8;
-    //   li:nth-child(4){
-    //     background: url(../images/point2.png) no-repeat;
-    //     background-size: 100% 100%;
-    //   }
-    // }
     .timeLine{
       display: flex;
       position: relative;
