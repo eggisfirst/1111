@@ -24,8 +24,8 @@ class Header extends Component {
     }
 
     this.dateChange1 = () => {
-      // this.getAwards(this, '2018-11-12')
-      this.getLine()
+      this.getAwards(this, '2018-11-12')
+      
     }
     this.dateChange2 = () => {
       this.getAwards(this, '2018-11-19')
@@ -39,27 +39,29 @@ class Header extends Component {
 
     this.getLine = () => {
       let date = new Date().getDate()
+      let mouth = new Date().getMonth()
+      console.log('today is',date,mouth)
       let myTimeLine = document.getElementsByClassName('timeLine')
       let myPoint = document.getElementsByTagName('li')
-      if(date == 12 ){
+      if(date > 11 && date < 19){
         console.log(date)
         myTimeLine[0].classList.add('timeLineChangeWidth1')
         myPoint[0].classList.add('changeBgPoint')
-      }else if(date == 19 ){
+      }else if(date > 18 && date < 26 ){
         myTimeLine[0].classList.add('timeLineChangeWidth2')
         myPoint[0].classList.add('changeBgPoint')
         myPoint[1].classList.add('changeBgPoint')
-      }else if(date == 26){
+      }else if(date > 25 || (date < 3 && mouth == 11)){
         myTimeLine[0].classList.add('timeLineChangeWidth3')
         myPoint[0].classList.add('changeBgPoint')
         myPoint[1].classList.add('changeBgPoint')
         myPoint[2].classList.add('changeBgPoint')
-      }else if(date == 3){
+      }else if(mouth == 11 && date == 3){
         myTimeLine[0].classList.add('timeLineChangeWidth4')
         myPoint[0].classList.add('changeBgPoint')
         myPoint[1].classList.add('changeBgPoint')
         myPoint[2].classList.add('changeBgPoint')
-        myPoint[3].classList.add('changeBgPoint')
+        myPoint[3].classList.add('changeBgPoint') 
       }
     }
 
@@ -77,7 +79,9 @@ class Header extends Component {
       })
     }
 	}
-
+  componentDidMount(){
+    this.getLine()
+  }
 	lis () {
 		return this.state.numbers.map((number) => <li key={number}>{number}</li>)
 	}

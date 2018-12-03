@@ -20,24 +20,22 @@ let init = (function() {
       return arr.concat('')
     },
     dateCount: (date) => {
-      if (date > 25 || date < 3) {
-        console.log('1',date)
-        return (30 - date + 3)
-      } else if(date < 12){
-        console.log('2',date)
-        return (12 - date)
-      } else if(date > 11 && date < 19){
-        console.log('3')
-        return (19 - date)
-      } else if(date > 18 && date < 26){
-        console.log('4')
-        return (26 - date) 
-      } 
-      // if (date < 02) {
-      //   return 19 - date
-      // } else {
-      //   return 26 - date
-      // }
+      let mouth = new Date().getMonth()
+      if(mouth == 10){
+        if(date < 12){
+          return (12 - date)
+        }else if(date > 11 && date < 19){
+          console.log('3')
+          return (19 - date)
+        } else if(date > 18 && date < 26){
+          console.log('4')
+          return (26 - date) 
+        } else if(date > 25){
+          return (30 - date + 3)
+        }
+      }else if(mouth == 11){
+        return (3 - date)
+      }
     },
     getAwards: (date) => {
       let temp = new Promise(function(resolve, reject) {
